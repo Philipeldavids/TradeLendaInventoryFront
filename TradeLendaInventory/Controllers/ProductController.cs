@@ -17,5 +17,10 @@ namespace TradeLendaInventory.Controllers
         {
             return View();
         }
+
+        public IActionResult GetExpiredProduct()
+        {
+            return View();
+        }
     }
 }

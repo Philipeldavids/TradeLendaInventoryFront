@@ -312,7 +312,7 @@
                         <div class="profilename">
                             <div class="profileset">
                                 <span class="user-img">
-                                    <img src="assets/img/profiles/avator1.jpg" alt>
+                                    <img src="~/assets/img/profiles/avator1.jpg" alt>
                                     <span class="status online"></span>
                                 </span>
                                 <div class="profilesets">
@@ -324,7 +324,7 @@
                             <a class="dropdown-item" href="profile.html"> <i class="me-2" data-feather="user"></i> My Profile</a>
                             <a class="dropdown-item" href="general-settings.html"><i class="me-2" data-feather="settings"></i>Settings</a>
                             <hr class="m-0">
-                            <a class="dropdown-item logout pb-0" href="signin.html"><img src="assets/img/icons/log-out.svg" class="me-2" alt="img">Logout</a>
+                            <a class="dropdown-item logout pb-0" asp-controller="Auth" asp-action="SignIn"><img src="~/assets/img/icons/log-out.svg" class="me-2" alt="img">Logout</a>
                         </div>
                     </div>
                 </li>
@@ -383,7 +383,7 @@
                             <ul>
                                 <li><a asp-controller="Product" asp-action="GetProductList"><i data-feather="box"></i><span>Products</span></a></li>
                                 <li><a asp-controller="Product" asp-action="AddProduct"><i data-feather="plus-square"></i><span>Create Product</span></a></li>
-                                <li><a href="expired-products.html"><i data-feather="codesandbox"></i><span>Expired Products</span></a></li>
+                                <li><a asp-controller="Product" asp-action="GetExpiredProduct"><i data-feather="codesandbox"></i><span>Expired Products</span></a></li>
                                 <li><a href="low-stocks.html"><i data-feather="trending-down"></i><span>Low Stocks</span></a></li>
                                 <li><a href="category-list.html"><i data-feather="codepen"></i><span>Category</span></a></li>
                                 <li><a href="sub-categories.html"><i data-feather="speaker"></i><span>Sub Category</span></a></li>
