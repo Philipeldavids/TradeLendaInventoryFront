@@ -1,0 +1,129 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>00cde44b-3baa-47c5-bab6-cbae59545803</UserSecretsId>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\img\icons\calendars.svg" />
+    <None Include="wwwroot\assets\img\icons\dash1.svg" />
+    <None Include="wwwroot\assets\img\icons\dash2.svg" />
+    <None Include="wwwroot\assets\img\icons\dash3.svg" />
+    <None Include="wwwroot\assets\img\icons\dash4.svg" />
+    <None Include="wwwroot\assets\img\icons\delete.svg" />
+    <None Include="wwwroot\assets\img\icons\emoj-icon-01.svg" />
+    <None Include="wwwroot\assets\img\icons\emoj-icon-02.svg" />
+    <None Include="wwwroot\assets\img\icons\emoj-icon-03.svg" />
+    <None Include="wwwroot\assets\img\icons\emoj-icon-04.svg" />
+    <None Include="wwwroot\assets\img\icons\emoj-icon-05.svg" />
+    <None Include="wwwroot\assets\img\icons\file-text-icon-01.svg" />
+    <None Include="wwwroot\assets\img\icons\heart.svg" />
+    <None Include="wwwroot\assets\img\icons\hi.svg" />
+    <None Include="wwwroot\assets\img\icons\like.svg" />
+    <None Include="wwwroot\assets\img\icons\log-out.svg" />
+    <None Include="wwwroot\assets\img\icons\menu-icon.svg" />
+    <None Include="wwwroot\assets\img\icons\play-01.svg" />
+    <None Include="wwwroot\assets\img\icons\printer.svg" />
+    <None Include="wwwroot\assets\img\icons\product.svg" />
+    <None Include="wwwroot\assets\img\icons\purchase1.svg" />
+    <None Include="wwwroot\assets\img\icons\purchased-earnings.svg" />
+    <None Include="wwwroot\assets\img\icons\sales1.svg" />
+    <None Include="wwwroot\assets\img\icons\scanners.svg" />
+    <None Include="wwwroot\assets\img\icons\settings.svg" />
+    <None Include="wwwroot\assets\img\icons\smile-chat.svg" />
+    <None Include="wwwroot\assets\img\icons\total-sales.svg" />
+    <None Include="wwwroot\assets\img\icons\users1.svg" />
+    <None Include="wwwroot\assets\img\icons\voice.svg" />
+    <None Include="wwwroot\assets\img\icons\weekly-earning.svg" />
+    <None Include="wwwroot\assets\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\assets\js\feather.min.js" />
+    <None Include="wwwroot\assets\js\jquery-3.7.1.min.js" />
+    <None Include="wwwroot\assets\js\jquery.slimscroll.min.js" />
+    <None Include="wwwroot\assets\js\script.js" />
+    <None Include="wwwroot\assets\js\theme-script.js" />
+    <None Include="wwwroot\assets\js\theme-settings.js" />
+    <None Include="wwwroot\assets\plugins\apexchart\apexcharts.min.js" />
+    <None Include="wwwroot\assets\plugins\apexchart\chart-data.js" />
+    <None Include="wwwroot\assets\plugins\fontawesome\webfonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\assets\plugins\summernote\summernote-bs4.min.js" />
+    <None Include="wwwroot\assets\plugins\sweetalert\sweetalert2.all.min.js" />
+    <None Include="wwwroot\assets\plugins\sweetalert\sweetalerts.min.js" />
+    <None Include="wwwroot\assets\scss\base\_background.scss" />
+    <None Include="wwwroot\assets\scss\base\_base.scss" />
+    <None Include="wwwroot\assets\scss\components\_accordion.scss" />
+    <None Include="wwwroot\assets\scss\components\_alerts.scss" />
+    <None Include="wwwroot\assets\scss\components\_avatar.scss" />
+    <None Include="wwwroot\assets\scss\components\_badge.scss" />
+    <None Include="wwwroot\assets\scss\components\_boostrap.scss" />
+    <None Include="wwwroot\assets\scss\components\_border.scss" />
+    <None Include="wwwroot\assets\scss\components\_breadcrumb.scss" />
+    <None Include="wwwroot\assets\scss\components\_button.scss" />
+    <None Include="wwwroot\assets\scss\components\_calendar.scss" />
+    <None Include="wwwroot\assets\scss\components\_cards.scss" />
+    <None Include="wwwroot\assets\scss\components\_chart.scss" />
+    <None Include="wwwroot\assets\scss\components\_dropdown.scss" />
+    <None Include="wwwroot\assets\scss\components\_font.scss" />
+    <None Include="wwwroot\assets\scss\components\_forms.scss" />
+    <None Include="wwwroot\assets\scss\components\_grid.scss" />
+    <None Include="wwwroot\assets\scss\components\_icons.scss" />
+    <None Include="wwwroot\assets\scss\components\_navs-tabs.scss" />
+    <None Include="wwwroot\assets\scss\components\_pagination.scss" />
+    <None Include="wwwroot\assets\scss\components\_popovers.scss" />
+    <None Include="wwwroot\assets\scss\components\_popup.scss" />
+    <None Include="wwwroot\assets\scss\components\_progress.scss" />
+    <None Include="wwwroot\assets\scss\components\_ribbon.scss" />
+    <None Include="wwwroot\assets\scss\components\_tables.scss" />
+    <None Include="wwwroot\assets\scss\components\_tooltips.scss" />
+    <None Include="wwwroot\assets\scss\components\_typography.scss" />
+    <None Include="wwwroot\assets\scss\layout\_common.scss" />
+    <None Include="wwwroot\assets\scss\layout\_content.scss" />
+    <None Include="wwwroot\assets\scss\layout\_darktheme.scss" />
+    <None Include="wwwroot\assets\scss\layout\_header-four.scss" />
+    <None Include="wwwroot\assets\scss\layout\_header-one.scss" />
+    <None Include="wwwroot\assets\scss\layout\_header-three.scss" />
+    <None Include="wwwroot\assets\scss\layout\_header-two.scss" />
+    <None Include="wwwroot\assets\scss\layout\_header.scss" />
+    <None Include="wwwroot\assets\scss\layout\_loader.scss" />
+    <None Include="wwwroot\assets\scss\layout\_notification.scss" />
+    <None Include="wwwroot\assets\scss\layout\_sidebar-settings.scss" />
+    <None Include="wwwroot\assets\scss\layout\_sidebar.scss" />
+    <None Include="wwwroot\assets\scss\layout\_theme-settings.scss" />
+    <None Include="wwwroot\assets\scss\main.scss" />
+    <None Include="wwwroot\assets\scss\pages\_add-product.scss" />
+    <None Include="wwwroot\assets\scss\pages\_attendance-employee.scss" />
+    <None Include="wwwroot\assets\scss\pages\_barcode.scss" />
+    <None Include="wwwroot\assets\scss\pages\_call.scss" />
+    <None Include="wwwroot\assets\scss\pages\_chat.scss" />
+    <None Include="wwwroot\assets\scss\pages\_dashboard.scss" />
+    <None Include="wwwroot\assets\scss\pages\_email.scss" />
+    <None Include="wwwroot\assets\scss\pages\_employees-grid.scss" />
+    <None Include="wwwroot\assets\scss\pages\_error.scss" />
+    <None Include="wwwroot\assets\scss\pages\_file-manager.scss" />
+    <None Include="wwwroot\assets\scss\pages\_login.scss" />
+    <None Include="wwwroot\assets\scss\pages\_notes.scss" />
+    <None Include="wwwroot\assets\scss\pages\_pos-design.scss" />
+    <None Include="wwwroot\assets\scss\pages\_pos.scss" />
+    <None Include="wwwroot\assets\scss\pages\_product-list.scss" />
+    <None Include="wwwroot\assets\scss\pages\_product.scss" />
+    <None Include="wwwroot\assets\scss\pages\_profile.scss" />
+    <None Include="wwwroot\assets\scss\pages\_sales-dashboard.scss" />
+    <None Include="wwwroot\assets\scss\pages\_settings.scss" />
+    <None Include="wwwroot\assets\scss\pages\_stocks.scss" />
+    <None Include="wwwroot\assets\scss\pages\_todo-inbox.scss" />
+    <None Include="wwwroot\assets\scss\pages\_transfer-list.scss" />
+    <None Include="wwwroot\assets\scss\utils\_mixins.scss" />
+    <None Include="wwwroot\assets\scss\utils\_variables.scss" />
+    <None Include="wwwroot\assets\scss\vendors\_datatables.scss" />
+    <None Include="wwwroot\assets\scss\vendors\_select2.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.4" />
+  </ItemGroup>
+
+</Project>
