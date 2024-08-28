@@ -12,5 +12,14 @@ namespace TradeLendaInventory.Controllers
         {
             return RedirectToAction("SignIn", "Auth");
         }
+
+        public IActionResult Register()
+        {
+            return View();
+        }
+        public IActionResult SignUp()
+        {
+            return RedirectToAction("SignIn", "Auth");
+        }
     }
 }

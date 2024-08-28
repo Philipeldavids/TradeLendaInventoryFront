@@ -22,5 +22,14 @@ namespace TradeLendaInventory.Controllers
         {
             return View();
         }
+
+        public IActionResult GetLowStockProducts()
+        {
+            return View();
+        }
+        public IActionResult GetCategory() 
+        {
+            return View();
+        }
     }
 }
