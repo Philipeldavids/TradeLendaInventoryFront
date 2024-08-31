@@ -4,7 +4,7 @@
     {
         public class ClientRoutes
         {
-            
+            public const string Token = "";
         }
     }
 }
