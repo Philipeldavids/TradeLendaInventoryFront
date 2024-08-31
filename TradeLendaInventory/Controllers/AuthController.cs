@@ -21,5 +21,20 @@ namespace TradeLendaInventory.Controllers
         {
             return RedirectToAction("SignIn", "Auth");
         }
+
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        public IActionResult ResetPasswordFromMail()
+        {
+            return View();
+        }
+
+        public IActionResult ResetPassword()
+        {
+            return RedirectToAction("SignIn", "Auth");
+        }
     }
 }

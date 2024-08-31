@@ -2,9 +2,9 @@
 
 namespace TradeLendaInventory.Controllers
 {
-    public class ProductController : Controller
+    public class InventoryManagementController : Controller
     {
-        public ProductController()
+        public InventoryManagementController()
         {
             
         }
@@ -29,6 +29,11 @@ namespace TradeLendaInventory.Controllers
         }
         public IActionResult GetCategory() 
         {
+            return View();
+        }
+
+        public IActionResult CreateBarcode() 
+        { 
             return View();
         }
     }
