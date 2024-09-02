@@ -1,24 +1,77 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Reflection.Metadata;
+using System.Text;
+using TradeLendaInventory.Models;
+using TradeLendaInventory.Utility;
 
 namespace TradeLendaInventory.Controllers
 {
     public class AuthController : Controller
     {
+        private readonly HttpClient _httpClient;
+        public AuthController(IHttpClientFactory httpClient)
+        {
+
+            _httpClient = httpClient.CreateClient("MyClient"); ;
+
+        }
+        [HttpGet]
         public IActionResult SignIn()
         {
-            return View();   
+
+            return View();            
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SignIn(LoginModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.Token, model);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var tokenResponse = await response.Content.ReadAsStringAsync();
+                var token = JsonConvert.DeserializeObject<TokenResponse>(tokenResponse).Token;
+
+                // Store token in session or a cookie
+                HttpContext.Session.SetString("JWTToken", token);
+                // or
+                //Response.Cookies.Append("JWTToken", token);
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            ModelState.AddModelError("", "Invalid login attempt.");
+            return View(model);
         }
         public IActionResult LogOut()
         {
             return RedirectToAction("SignIn", "Auth");
         }
 
+        [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
-        public IActionResult SignUp()
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterModel model)
         {
+            if (!ModelState.IsValid)
+                return View(model);
+           
+            
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.Register, model);
+            if (!response.IsSuccessStatusCode)
+            {
+                return View(model);
+            }
+            
             return RedirectToAction("SignIn", "Auth");
         }
 

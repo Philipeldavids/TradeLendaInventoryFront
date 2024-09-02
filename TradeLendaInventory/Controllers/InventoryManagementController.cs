@@ -36,5 +36,10 @@ namespace TradeLendaInventory.Controllers
         { 
             return View();
         }
+
+        public IActionResult GetBrand() 
+        {
+            return View();
+        }
     }
 }

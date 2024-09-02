@@ -1,4 +1,5 @@
-﻿@{
+﻿@model RegisterModel
+@{
     ViewData["Title"] = "Register Page";
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
@@ -7,7 +8,7 @@
     <div class="account-content">
         <div class="login-wrapper register-wrap bg-img">
             <div class="login-content">
-                <form asp-controller="Auth" asp-action="SignUp">
+                <form asp-controller="Auth" asp-action="Register" method="post">
                     <div class="login-userset">
                         <div class="login-logo logo-normal">
                             <img src="~/assets/img/trade-lenda.png" alt="img">
@@ -22,30 +23,34 @@
                         <div class="form-login">
                             <label>Name</label>
                             <div class="form-addons">
-                                <input type="text" class="form-control">
+                                <input asp-for="Name" type="text" class="form-control">
                                 <img src="~/assets/img/icons/user-icon.svg" alt="img">
                             </div>
+                            <span asp-validation-for="Name"></span>
                         </div>
                         <div class="form-login">
                             <label>Email Address</label>
                             <div class="form-addons">
-                                <input type="text" class="form-control">
+                                <input asp-for="Email" type="text" class="form-control">
                                 <img src="~/assets/img/icons/mail.svg" alt="img">
                             </div>
+                            <span asp-validation-for="Email" color="red"></span>
                         </div>
                         <div class="form-login">
                             <label>Password</label>
                             <div class="pass-group">
-                                <input type="password" class="pass-input">
+                                <input asp-for="Password" type="password" class="pass-input">
                                 <span class="fas toggle-password fa-eye-slash"></span>
                             </div>
+                            <span asp-validation-for="Password" color="red"></span>
                         </div>
                         <div class="form-login">
                             <label>Confirm Passworrd</label>
                             <div class="pass-group">
-                                <input type="password" class="pass-inputs">
+                                <input asp-for="ConfirmPassword" type="password" class="pass-inputs">
                                 <span class="fas toggle-passwords fa-eye-slash"></span>
                             </div>
+                            <span asp-validation-for="ConfirmPassword" color="red"></span>
                         </div>
                         <div class="form-login authentication-check">
                             <div class="row">
@@ -53,10 +58,11 @@
                                     <div class="custom-control custom-checkbox justify-content-start">
                                         <div class="custom-control custom-checkbox">
                                             <label class="checkboxs ps-4 mb-0 pb-0 line-height-1">
-                                                <input type="checkbox">
+                                                <input asp-for="IsAgreement" type="checkbox">
                                                 <span class="checkmarks"></span>I agree to the <a href="#" class="hover-a">Terms & Privacy</a>
                                             </label>
                                         </div>
+                                        <span asp-validation-for="IsAgreement"></span>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +71,7 @@
                             <button type="submit" class="btn btn-login">Sign Up</button>
                         </div>
                         <div class="signinform">
-                            <h4>Already have an account ? <a href="#" class="hover-a">Sign In Instead</a></h4>
+                            <h4>Already have an account ? <a asp-controller="Auth" asp-action="SignIn" class="hover-a">Sign In Instead</a></h4>
                         </div>
                         <div class="form-setlogin or-text">
                             <h4>OR</h4>

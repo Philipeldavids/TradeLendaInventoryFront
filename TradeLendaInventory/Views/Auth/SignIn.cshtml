@@ -1,4 +1,5 @@
-﻿@{
+﻿@model LoginModel 
+@{
     ViewData["Title"] = "SignIn Page";
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
@@ -11,7 +12,7 @@
     <div class="account-content">
         <div class="login-wrapper bg-img">
             <div class="login-content">
-                <form asp-controller="Home" asp-action="Index">
+                <form asp-controller="Auth" asp-action="SignIn" method="post">
                     <div class="login-userset">
                         <div class="login-logo logo-normal">
                             <img src="~/assets/img/trade-lenda.png" alt="img">
@@ -26,16 +27,18 @@
                         <div class="form-login mb-3">
                             <label class="form-label">Email Address</label>
                             <div class="form-addons">
-                                <input type="text" class="form- control">
+                                <input asp-for="UserName" type="text" class="form- control">
                                 <img src="~/assets/img/icons/mail.svg" alt="img">
                             </div>
+                            <span asp-validation-for="UserName" color="red"></span>
                         </div>
                         <div class="form-login mb-3">
                             <label class="form-label">Password</label>
                             <div class="pass-group">
-                                <input type="password" class="pass-input form-control">
+                                <input asp-for="Password" type="password" class="pass-input form-control">
                                 <span class="fas toggle-password fa-eye-slash"></span>
                             </div>
+                            <span asp-validation-for="Password" color="red"></span>
                         </div>
                         <div class="form-login authentication-check">
                             <div class="row">
