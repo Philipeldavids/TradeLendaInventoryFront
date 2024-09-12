@@ -9,6 +9,7 @@
         <div class="login-wrapper register-wrap bg-img">
             <div class="login-content">
                 <form asp-controller="Auth" asp-action="Register" method="post">
+                                    
                     <div class="login-userset">
                         <div class="login-logo logo-normal">
                             <img src="~/assets/img/trade-lenda.png" alt="img">
@@ -18,7 +19,7 @@
                         </a>
                         <div class="login-userheading">
                             <h3>Register</h3>
-                            <h4>Create New Dreamspos Account</h4>
+                            <h4>Create New TradeLenda Inventory Account</h4>
                         </div>
                         <div class="form-login">
                             <label>Name</label>
@@ -35,6 +36,14 @@
                                 <img src="~/assets/img/icons/mail.svg" alt="img">
                             </div>
                             <span asp-validation-for="Email" color="red"></span>
+                        </div>
+                        <div class="form-login">
+                            <label>Phone Number</label>
+                            <div class="form-addons">
+                                <input asp-for="PhoneNumber" type="text" class="form-control">
+                                
+                            </div>
+                            <span asp-validation-for="PhoneNumber" color="red"></span>
                         </div>
                         <div class="form-login">
                             <label>Password</label>
@@ -96,7 +105,7 @@
                             </ul>
                         </div>
                         <div class="my-4 d-flex justify-content-center align-items-center copyright-text">
-                            <p>Copyright &copy; 2023 DreamsPOS. All rights reserved</p>
+                            <p>Copyright &copy; 2024 Tradelenda. All rights reserved</p>
                         </div>
                     </div>
                 </form>

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model TradeLendaInventory.Models.ViewModel.CategoryViewModel;
+
+@{
     ViewData["Title"] = "GetCategory Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -117,182 +119,40 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Laptop</td>
-                                <td>laptop</td>
-                                <td>25 May 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Electronics</td>
-                                <td>electronics</td>
-                                <td>24 Jun 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Shoe</td>
-                                <td>shoe</td>
-                                <td>23 Jul 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Speaker</td>
-                                <td>speaker</td>
-                                <td>22 Aug 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Furniture</td>
-                                <td>furniture</td>
-                                <td>21 Sep 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Bags</td>
-                                <td>bags</td>
-                                <td>20 Sep 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Phone</td>
-                                <td>phone</td>
-                                <td>20 Sep 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Chairs</td>
-                                <td>chairs</td>
-                                <td>20 Sep 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
+                            @foreach(var item in Model.Categories)
+                            {
+                                <tr>
+                                    <td>
+                                        <label class="checkboxs">
+                                            <input type="checkbox">
+                                            <span class="checkmarks"></span>
+                                        </label>
+                                    </td>
+                                    <td>@item.CategoryName</td>
+                                    <td>@item.CategorySLug</td>
+                                    <td>@item.CreatedOn</td>
+                                    @if(item.Status == true)
+                                    {
+                                        <td><span class="badge badge-linesuccess">Active</span></td>
+                                    }
+                                    else
+                                    {
+                                        <td><span class="badge badge-linedanger">Inactive</span></td>
+                                    }
+
+                                    <td class="action-table-data">
+                                        <div class="edit-delete-action">
+                                            <a class="me-2 p-2" href="#" data-bs-toggle="modal" onclick="openEditModal('@item.CategoryId.ToString()')">
+                                                <i data-feather="edit" class="feather-edit"></i>
+                                            </a>
+                                            <a class="p-2" asp-controller="InventoryManagement" asp-action="DeleteCategory" asp-route-id="@item.CategoryId" onclick="return confirm('Are you sure you want to delete this?')">
+                                                <i data-feather="trash-2" class="feather-trash-2"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                         
                         </tbody>
                     </table>
                 </div>
@@ -318,19 +178,19 @@
                         </button>
                     </div>
                     <div class="modal-body custom-modal-body">
-                        <form action="category-list.html">
+                        <form asp-controller="InventoryManagement" asp-action="AddCategory" method="post">
                             <div class="mb-3">
                                 <label class="form-label">Category</label>
-                                <input type="text" class="form-control">
+                                <input asp-for="category.CategoryName" type="text" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Category Slug</label>
-                                <input type="text" class="form-control">
+                                <input asp-for="category.CategorySLug" type="text" class="form-control">
                             </div>
                             <div class="mb-0">
                                 <div class="status-toggle modal-status d-flex justify-content-between align-items-center">
                                     <span class="status-label">Status</span>
-                                    <input type="checkbox" id="user2" class="check" checked>
+                                    <input asp-for="category.Status" type="checkbox" id="user2" class="check" checked>
                                     <label for="user2" class="checktoggle"></label>
                                 </div>
                             </div>
@@ -347,7 +207,7 @@
 </div>
 
 
-<div class="modal fade" id="edit-category">
+<div class="modal fade" id="editModal">
     <div class="modal-dialog modal-dialog-centered custom-modal-two">
         <div class="modal-content">
             <div class="page-wrapper-new p-0">
@@ -361,19 +221,23 @@
                         </button>
                     </div>
                     <div class="modal-body custom-modal-body">
-                        <form action="category-list.html">
+                        <form asp-controller="InventoryManagement" asp-action="SaveEdit" method="post">
+                            <div>
+                                <input type="hidden" class="form-control" id="CategoryId">
+                            </div>
+                            
                             <div class="mb-3">
                                 <label class="form-label">Category</label>
-                                <input type="text" class="form-control" value="Laptop">
+                                <input  type="text" class="form-control" id="CategoryName">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Category Slug</label>
-                                <input type="text" class="form-control" value="laptop">
+                                <input  type="text" class="form-control" id="Categoryslug" >
                             </div>
                             <div class="mb-0">
                                 <div class="status-toggle modal-status d-flex justify-content-between align-items-center">
                                     <span class="status-label">Status</span>
-                                    <input type="checkbox" id="user3" class="check" checked>
+                                    <input id="CategoryStatus" type="checkbox" id="user3" class="check" checked>
                                     <label for="user3" class="checktoggle"></label>
                                 </div>
                             </div>
@@ -398,3 +262,94 @@
         </li>
     </ul>
 </div>
+@section scripts {
+    <script>
+        //$(document).ready(function () {
+            //Function to open the modal and populate data
+            function openEditModal(itemId) {
+
+                $.ajax({
+                    type: "GET",
+                    url: '@Url.Action("GetCategoryById", "InventoryManagement")',
+                    data: { id: itemId },
+                    success: function (item) {
+                        // Populate modal fields with item data
+                        $("#CategoryId").val(item.CategoryId);
+                        $("#CategoryName").val(item.CategoryName);
+                        $("#Categoryslug").val(item.CategorySLug);
+                        $("#CategoryStatus").val(item.Status);
+                        // Show the modal
+
+                    $('#editModal').modal();
+                    $('#editModal').modal('show');
+                       // $("#editModal").show();
+                    },
+                    error: function () {
+                        alert("Error retrieving item data!");
+                    }
+                });
+            }
+        
+        //     Edit button click handler
+        //     $(".editButton").click(function () {
+        //         var itemId = $(this).data("id");
+        //         openEditModal(itemId);
+        //     });
+
+        //     Close modal when 'x' is clicked
+        //     $(".close").click(function () {
+        //         $("#editModal").hide();
+        //     });
+
+        //     Hide modal if clicked outside of it
+        //     $(window).click(function (event) {
+        //         if (event.target == $("#editModal")[0]) {
+        //             $("#editModal").hide();
+        //         }
+        //     });
+        // });
+        // function openEditModal(cid) {
+        //     //$('#txttransid').val();
+        //     $('#editModal').modal();
+        //     $('#editModal').modal('show');
+
+        // }
+
+        function deletecat(id){
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                type: "warning",
+                showCancelButton: !0,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+                confirmButtonClass: "btn btn-primary",
+                cancelButtonClass: "btn btn-danger ml-1",
+                buttonsStyling: !1,
+            }).then(function (t) {
+
+                t.value &&
+                    Swal.fire({
+                        type: "success",
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        confirmButtonClass: "btn btn-success",
+                    });
+            });
+            
+                $ajax({
+                type: "GET",
+                url: '@Url.Action("DeleteCategory", "InventoryManagement")',
+                data: { id: itemId },
+                success: function (item) {
+                    
+                },
+                error: function () {
+                    alert("Error retrieving item data!");
+                }
+            })
+        }
+    </script>
+}

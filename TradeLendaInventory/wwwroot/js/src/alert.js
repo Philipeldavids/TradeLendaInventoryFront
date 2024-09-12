@@ -20,10 +20,10 @@ import {
 
 const NAME = 'alert'
 const DATA_KEY = 'bs.alert'
-const EVENT_KEY = `.${DATA_KEY}`
+const EVENT_KEY = `.?{DATA_KEY}`
 
-const EVENT_CLOSE = `close${EVENT_KEY}`
-const EVENT_CLOSED = `closed${EVENT_KEY}`
+const EVENT_CLOSE = `close?{EVENT_KEY}`
+const EVENT_CLOSED = `closed?{EVENT_KEY}`
 const CLASS_NAME_FADE = 'fade'
 const CLASS_NAME_SHOW = 'show'
 
@@ -68,7 +68,7 @@ class Alert extends BaseComponent {
             }
 
             if (data[config] === undefined || config.startsWith('_') || config === 'constructor') {
-                throw new TypeError(`No method named "${config}"`)
+                throw new TypeError(`No method named "?{config}"`)
             }
 
             data[config](this)

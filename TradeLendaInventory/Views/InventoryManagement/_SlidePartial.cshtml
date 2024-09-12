@@ -1,0 +1,64 @@
+﻿@model TradeLendaInventory.Models.ViewModel.ProductViewModel
+@{
+}
+
+<div class="table-responsive">
+    <table class="table  datanew">
+        <thead>
+            <tr>
+                <th class="no-sort">
+                    <label class="checkboxs">
+                        <input type="checkbox" id="select-all2">
+                        <span class="checkmarks"></span>
+                    </label>
+                </th>
+                <th>Warehouse</th>
+                <th>Store</th>
+                <th>Product</th>
+                <th>Category</th>
+                <th>SKU</th>
+                <th>Qty</th>
+                
+                <th class="no-sort">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model.Products)
+            {
+                <tr>
+                    <td>
+                        <label class="checkboxs">
+                            <input type="checkbox">
+                            <span class="checkmarks"></span>
+                        </label>
+                    </td>
+                    <td>@item.Warehouse</td>
+                    <td>@item.Store</td>
+                    <td>
+                        <div class="productimgname">
+                            <a href="javascript:void(0);" class="product-img stock-img">
+                                <img src="@item.ProductImageUrl" alt="product">
+                            </a>
+                            <a href="javascript:void(0);">@item.ProductName </a>
+                        </div>
+                    </td>
+                    <td>@item.Category.CategoryName</td>
+                    <td>@item.SKU</td>
+                    <td>@item.Quantity</td>
+                   
+                    <td class="action-table-data">
+                        <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="javascript:void(0);">
+                                <i data-feather="edit" class="feather-edit"></i>
+                            </a>
+                            <a class="confirm-text p-2" href="javascript:void(0);">
+                                <i data-feather="trash-2" class="feather-trash-2"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+
+            }
+         </tbody>
+    </table>
+</div>

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model TradeLendaInventory.Models.ViewModel.ProductViewModel
+@{
     ViewData["Title"] = "ExpiredProduct Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -105,36 +106,40 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <div class="productimgname">
-                                        <a href="javascript:void(0);" class="product-img stock-img">
-                                            <img src="assets/img/products/stock-img-01.png" alt="product">
-                                        </a>
-                                        <a href="javascript:void(0);">Lenovo 3rd Generation </a>
-                                    </div>
-                                </td>
-                                <td>PT001</td>
-                                <td>19 Nov 2022</td>
-                                <td>02 Jan 2023</td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="javascript:void(0);">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
+                            @foreach(var item in Model.Products)
+                            {
+                                <tr>
+                                    <td>
+                                        <label class="checkboxs">
+                                            <input type="checkbox">
+                                            <span class="checkmarks"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <div class="productimgname">
+                                            <a href="javascript:void(0);" class="product-img stock-img">
+                                                <img src="@item.ProductImageUrl"="product">
+                                            </a>
+                                            <a href="javascript:void(0);">@item.ProductName</a>
+                                        </div>
+                                    </td>
+                                    <td>@item.SKU</td>
+                                    <td>@item.ManufacturedDate.ToShortDateString()</td>
+                                    <td>@item.ExpiredDate.ToShortDateString()</td>
+                                    <td class="action-table-data">
+                                        <div class="edit-delete-action">
+                                            <a class="me-2 p-2" href="javascript:void(0);">
+                                                <i data-feather="edit" class="feather-edit"></i>
+                                            </a>
+                                            <a class="confirm-text p-2" href="javascript:void(0);">
+                                                <i data-feather="trash-2" class="feather-trash-2"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                            
+                           @*  <tr>
                                 <td>
                                     <label class="checkboxs">
                                         <input type="checkbox">
@@ -365,7 +370,7 @@
                                         </a>
                                     </div>
                                 </td>
-                            </tr>
+                            </tr> *@
                         </tbody>
                     </table>
                 </div>

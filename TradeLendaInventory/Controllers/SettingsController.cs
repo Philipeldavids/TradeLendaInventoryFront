@@ -2,11 +2,12 @@
 
 namespace TradeLendaInventory.Controllers
 {
-    public class SettingsContoller : Controller
+    public class SettingsController : Controller
     {
         public IActionResult Profile()
         {
             return View();
         }
+
     }
 }

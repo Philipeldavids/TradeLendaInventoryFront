@@ -8,5 +8,14 @@ namespace TradeLendaInventory.Controllers
         {
             return View();
         }
+        public IActionResult GetSales()
+        {
+            return View();
+        }
+
+        public IActionResult POS()
+        {
+            return View();
+        }
     }
 }

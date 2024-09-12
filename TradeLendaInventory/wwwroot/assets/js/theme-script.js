@@ -21,7 +21,7 @@ function loadJS(FILE_URL, async = true) {
 
 
 setTimeout(function() {
-    $('.main-wrapper').append('<div class="sidebar-settings nav-toggle" id="layoutDiv">' +
+    $('.main-wrapper1').append('<div class="sidebar-settings nav-toggle" id="layoutDiv">' +
         '<div class="sidebar-content sticky-sidebar-one">' +
         '<div class="sidebar-header">' +
         '<div class="sidebar-theme-title">' +

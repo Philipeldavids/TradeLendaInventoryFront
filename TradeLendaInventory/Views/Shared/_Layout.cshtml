@@ -1,4 +1,17 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var userrole = "";
+    var IsActive = false;
+
+    if(TempData["Role"] != null)
+    {
+         userrole = TempData["Role"].ToString();
+    }
+     if(Convert.ToBoolean(TempData["IsActive"])){
+        IsActive = true;
+    }
+    
+}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -14,7 +27,7 @@
     <link rel="stylesheet" href="~/bootstrap/css/bootstrap.min.css">   
     <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="~/assets/css/animate.css">
 
     <link rel="stylesheet" href="~/assets/css/style.css">
@@ -68,7 +81,7 @@
                 <a href="index.html" class="logo-small">
                     <img src="assets/img/logo-small.png" alt>
                 </a>
-                <a id="toggle_btn" href="javascript:void(0);">
+                <a id="toggle_btn" href="#;">
                     <i data-feather="chevrons-left" class="feather-16"></i>
                 </a>
             </div>
@@ -85,7 +98,7 @@
 
                 <li class="nav-item nav-searchinputs">
                     <div class="top-nav-search">
-                        <a href="javascript:void(0);" class="responsive-search">
+                        <a href="#;" class="responsive-search">
                             <i class="fa fa-search"></i>
                         </a>
                         <form action="#" class="dropdown">
@@ -101,9 +114,9 @@
                                         <span><i data-feather="search" class="feather-16"></i></span>Recent Searches
                                     </h6>
                                     <ul class="search-tags">
-                                        <li><a href="javascript:void(0);">Products</a></li>
-                                        <li><a href="javascript:void(0);">Sales</a></li>
-                                        <li><a href="javascript:void(0);">Applications</a></li>
+                                        <li><a href="#;">Products</a></li>
+                                        <li><a href="#;">Sales</a></li>
+                                        <li><a href="#;">Applications</a></li>
                                     </ul>
                                 </div>
                                 <div class="search-info">
@@ -115,13 +128,13 @@
                                     <h6><span><i data-feather="user" class="feather-16"></i></span>Customers</h6>
                                     <ul class="customers">
                                         <li>
-                                            <a href="javascript:void(0);">Aron Varu<img src="assets/img/profiles/avator1.jpg" alt class="img-fluid"></a>
+                                            <a href="#;">Aron Varu<img src="assets/img/profiles/avator1.jpg" alt class="img-fluid"></a>
                                         </li>
                                         <li>
-                                            <a href="javascript:void(0);">Jonita<img src="assets/img/profiles/avatar-01.jpg" alt class="img-fluid"></a>
+                                            <a href="#;">Jonita<img src="assets/img/profiles/avatar-01.jpg" alt class="img-fluid"></a>
                                         </li>
                                         <li>
-                                            <a href="javascript:void(0);">Aaron<img src="assets/img/profiles/avatar-10.jpg" alt class="img-fluid"></a>
+                                            <a href="#;">Aaron<img src="assets/img/profiles/avatar-10.jpg" alt class="img-fluid"></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -132,7 +145,7 @@
 
 
                 <li class="nav-item dropdown has-arrow main-drop select-store-dropdown">
-                    <a href="javascript:void(0);" class="dropdown-toggle nav-link select-store" data-bs-toggle="dropdown">
+                    <a href="#;" class="dropdown-toggle nav-link select-store" data-bs-toggle="dropdown">
                         <span class="user-info">
                             <span class="user-letter">
                                 <img src="assets/img/store/store-01.png" alt="Store Logo" class="img-fluid">
@@ -143,16 +156,16 @@
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a href="javascript:void(0);" class="dropdown-item">
+                        <a href="#;" class="dropdown-item">
                             <img src="assets/img/store/store-01.png" alt="Store Logo" class="img-fluid"> Grocery Alpha
                         </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
+                        <a href="#;" class="dropdown-item">
                             <img src="assets/img/store/store-02.png" alt="Store Logo" class="img-fluid"> Grocery Apex
                         </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
+                        <a href="#;" class="dropdown-item">
                             <img src="assets/img/store/store-03.png" alt="Store Logo" class="img-fluid"> Grocery Bevy
                         </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
+                        <a href="#;" class="dropdown-item">
                             <img src="assets/img/store/store-04.png" alt="Store Logo" class="img-fluid"> Grocery Eden
                         </a>
                     </div>
@@ -160,45 +173,45 @@
 
 
                 <li class="nav-item dropdown has-arrow flag-nav nav-item-box">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="javascript:void(0);" role="button">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#;" role="button">
                         <img src="assets/img/flags/us.png" alt="Language" class="img-fluid">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a href="javascript:void(0);" class="dropdown-item active">
+                        <a href="#;" class="dropdown-item active">
                             <img src="assets/img/flags/us.png" alt height="16"> English
                         </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
+                        <a href="#;" class="dropdown-item">
                             <img src="assets/img/flags/fr.png" alt height="16"> French
                         </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
+                        <a href="#;" class="dropdown-item">
                             <img src="assets/img/flags/es.png" alt height="16"> Spanish
                         </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
+                        <a href="#;" class="dropdown-item">
                             <img src="assets/img/flags/de.png" alt height="16"> German
                         </a>
                     </div>
                 </li>
 
                 <li class="nav-item nav-item-box">
-                    <a href="javascript:void(0);" id="btnFullscreen">
+                    <a href="#;" id="btnFullscreen">
                         <i data-feather="maximize"></i>
                     </a>
                 </li>
                 <li class="nav-item nav-item-box">
-                    <a href="email.html">
+                    @* <a href="email.html">
                         <i data-feather="mail"></i>
                         <span class="badge rounded-pill">1</span>
-                    </a>
+                    </a> *@
                 </li>
 
                 <li class="nav-item dropdown nav-item-box">
-                    <a href="javascript:void(0);" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                    <a href="#;" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
                         <i data-feather="bell"></i><span class="badge rounded-pill">2</span>
                     </a>
                     <div class="dropdown-menu notifications">
                         <div class="topnav-dropdown-header">
                             <span class="notification-title">Notifications</span>
-                            <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+                            <a href="#" class="clear-noti"> Clear All </a>
                         </div>
                         <div class="noti-content">
                             <ul class="notification-list">
@@ -295,17 +308,20 @@
                 </li>
 
                 <li class="nav-item nav-item-box">
-                    <a href="general-settings.html"><i data-feather="settings"></i></a>
+                    <a asp-controller="Settings" asp-action="Profile"><i data-feather="settings"></i></a>
                 </li>
                 <li class="nav-item dropdown has-arrow main-drop">
-                    <a href="javascript:void(0);" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
+                    <a href="#;" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
                         <span class="user-info">
                             <span class="user-letter">
-                                <img src="assets/img/profiles/avator1.jpg" alt class="img-fluid">
+                                <img src="~/assets/img/profiles/avator1.jpg" alt class="img-fluid">
                             </span>
                             <span class="user-detail">
-                                <span class="user-name">John Smilga</span>
-                                <span class="user-role">Super Admin</span>
+                                @if(TempData["UserName"] != null && TempData["Role"] != null){
+                                    <span class="user-name">@TempData["UserName"] </span>
+                                    <span class="user-role">@TempData["Role"]</span>
+                                }
+                                
                             </span>
                         </span>
                     </a>
@@ -317,15 +333,25 @@
                                     <span class="status online"></span>
                                 </span>
                                 <div class="profilesets">
-                                    <h6>John Smilga</h6>
-                                    <h5>Super Admin</h5>
+                                    @if (TempData["UserName"] != null && TempData["Role"] != null)
+                                    {
+                                        <h6>@TempData["UserName"] </h6>
+                                        <h5>@TempData["Role"]</h5>
+                                    }
                                 </div>
                             </div>
+                            
+                            
                             <hr class="m-0">
-                            <a class="dropdown-item" href="profile.html"> <i class="me-2" data-feather="user"></i> My Profile</a>
-                            <a class="dropdown-item" href="general-settings.html"><i class="me-2" data-feather="settings"></i>Settings</a>
+                            @if(IsActive){
+                                <a class="dropdown-item" asp-controller="User" asp-action="GetUserProfile"> <i class="me-2" data-feather="user"></i> My Profile</a>
+                            <a class="dropdown-item" asp-controller="Settings" asp-action="Profile"><i class="me-2" data-feather="settings"></i>Settings</a>
                             <hr class="m-0">
                             <a class="dropdown-item logout pb-0" asp-controller="Auth" asp-action="SignIn"><img src="~/assets/img/icons/log-out.svg" class="me-2" alt="img">Logout</a>
+                            }
+                            
+                           
+                            
                         </div>
                     </div>
                 </li>
@@ -333,7 +359,7 @@
             </div>
 
             <div class="dropdown mobile-user-menu">
-                <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                <a href="#;" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="profile.html">My Profile</a>
                     <a class="dropdown-item" href="general-settings.html">Settings</a>
@@ -354,35 +380,55 @@
                                 <li class="submenu">
                                     <a href="#" class="subdrop active"><i data-feather="grid"></i><span>Dashboard</span><span class="menu-arrow"></span></a>
                                     <ul id="menuItems" class="menu-items">
-                                        <li><a asp-controller="Home" asp-action="Index" class="active">Admin Dashboard</a></li>
+                                    @if(userrole == "SuperAdmin")
+                                    {
+                                        <li><a href="~/Home/Index" class="active">Admin Dashboard</a></li>
                                         <li><a asp-controller="Sales" asp-action="Index">Sales Dashboard</a></li>
+                                    }
+                                    else if(userrole == "Admin")
+                                    {
+                                        <li><a href="~/Home/Index" class="active">Admin Dashboard</a></li>
+                                    }
+                                    else if(userrole == "ShopOwner")
+                                    {
+                                        <li><a asp-controller="Sales" asp-action="Index">Sales Dashboard</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li></li>
+                                    }
+
                                     </ul>
                                 </li>
-                                <li class="submenu">
-                                    <a href="#"@* class="subdrop" *@><i data-feather="smartphone"></i><span>Application</span><span class="menu-arrow"></span></a>
+                                @* <li class="submenu">
+                                    <a href="#"@* class="subdrop" <i data-feather="smartphone"></i><span>Application</span><span class="menu-arrow"></span></a>
                                     <ul>
-                                        <li><a href="/Chat/Index" >Chat</a></li>
+                                        <li><a href="/Chat/Index" >Chat</a></li> *@
                                         @* <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Call<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Call<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="video-call.html">Video Call</a></li>
                                                 <li><a href="audio-call.html">Audio Call</a></li>
                                                 <li><a href="call-history.html">Call History</a></li>
                                             </ul>
                                         </li> *@
-                                        <li><a href="calendar.html">Calendar</a></li>
-                                        <li><a href="email.html">Email</a></li>
-                                        <li><a href="todo.html">To Do</a></li>
+                                       @*  <li><a href="#">Calendar</a></li>
+                                        <li><a href="#">Email</a></li>
+                                        <li><a href="#">To Do</a></li> *@
                                         @* <li><a href="notes.html">Notes</a></li>
                                         <li><a href="file-manager.html">File Manager</a></li> *@
-                                    </ul>
-                                </li>
+                                 @*    </ul>
+                                </li> *@
                             </ul>
                         </li>
-                        <li class="submenu-open">
+                        
+                            
+                            @if(userrole == "SuperAdmin" || userrole == "Admin" || userrole =="ShopOwner")
+                            {
+                                <li class="submenu-open">
                             <h6 class="submenu-hdr">Inventory</h6>
                             <ul>
-                                <li><a asp-controller="InventoryManagement" asp-action="GetProductList"><i data-feather="box"></i><span>Products</span></a></li>
+                                <li><a href="~/InventoryManagement/GetProductList"><i data-feather="box"></i><span>Products</span></a></li>
                                 <li><a asp-controller="InventoryManagement" asp-action="AddProduct"><i data-feather="plus-square"></i><span>Create Product</span></a></li>
                                 <li><a asp-controller="InventoryManagement" asp-action="GetExpiredProduct"><i data-feather="codesandbox"></i><span>Expired Products</span></a></li>
                                 <li><a asp-controller="InventoryManagement" asp-action="GetLowStockProducts"><i data-feather="trending-down"></i><span>Low Stocks</span></a></li>
@@ -390,67 +436,97 @@
                                 @* <li><a href="sub-categories.html"><i data-feather="speaker"></i><span>Sub Category</span></a></li> *@
                                 <li><a asp-controller="InventoryManagement" asp-action="GetBrand"><i data-feather="tag"></i><span>Brands</span></a></li>
                                 @* <li><a href="units.html"><i data-feather="speaker"></i><span>Units</span></a></li>
-                                <li><a href="varriant-attributes.html"><i data-feather="layers"></i><span>Variant Attributes</span></a></li>
-                                <li><a href="warranty.html"><i data-feather="bookmark"></i><span>Warranties</span></a></li> *@
+                            <li><a href="varriant-attributes.html"><i data-feather="layers"></i><span>Variant Attributes</span></a></li>
+                            <li><a href="warranty.html"><i data-feather="bookmark"></i><span>Warranties</span></a></li> *@
                                 <li><a asp-controller="InventoryManagement" asp-action="CreateBarcode"><i data-feather="align-justify"></i><span>Print Barcode</span></a></li>
-                                @* <li><a href="qrcode.html"><i data-feather="maximize"></i><span>Print QR Code</span></a></li> *@
+
                             </ul>
-                        </li>
+                            </li>
+                            }
+                           
+                        
+                        
+                           @if (userrole == "SuperAdmin" || userrole == "Admin" || userrole == "ShopOwner")
+                        {
                         <li class="submenu-open">
                             <h6 class="submenu-hdr">Stock</h6>
                             <ul>
-                                <li><a href="manage-stocks.html"><i data-feather="package"></i><span>Manage Stock</span></a></li>
-                                <li><a href="stock-adjustment.html"><i data-feather="clipboard"></i><span>Stock Adjustment</span></a></li>
-                                <li><a href="stock-transfer.html"><i data-feather="truck"></i><span>Stock Transfer</span></a></li>
-                            </ul>
-                        </li>
+
+                                <li><a asp-controller="Stock" asp-action="GetStock"><i data-feather="package"></i><span>Manage Stock</span></a></li>
+                                <li><a asp-controller="Stock" asp-action="StockADjustment"><i data-feather="clipboard"></i><span>Stock Adjustment</span></a></li>
+                                <li><a asp-controller="Stock" asp-action="StockTransfer"><i data-feather="truck"></i><span>Stock Transfer</span></a></li>
+
+
+                            </ul
+                             </li>
+                        }
+                   
+                        
+                            @if (userrole == "SuperAdmin" || userrole == "ShopOwner")
+                            {
                         <li class="submenu-open">
+
                             <h6 class="submenu-hdr">Sales</h6>
-                            <ul>
-                                <li><a href="sales-list.html"><i data-feather="shopping-cart"></i><span>Sales</span></a></li>
+                                <ul>
+                                <li><a asp-controller="Sales" asp-action="GetSales"><i data-feather="shopping-cart"></i><span>Sales</span></a></li>
                                 <li><a href="invoice-report.html"><i data-feather="file-text"></i><span>Invoices</span></a></li>
                                 <li><a href="sales-returns.html"><i data-feather="copy"></i><span>Sales Return</span></a></li>
                                 <li><a href="quotation-list.html"><i data-feather="save"></i><span>Quotation</span></a></li>
-                                <li><a href="pos.html"><i data-feather="hard-drive"></i><span>POS</span></a></li>
-                            </ul>
+                                <li><a asp-controller="Sales" asp-action="POS"><i data-feather="hard-drive"></i><span>POS</span></a></li>
+                                </ul>
                         </li>
+                            }
+                            else if(userrole =="Customer")
+                            {
                         <li class="submenu-open">
+                                    <h6 class="submenu-hdr">Sales</h6>
+                                    <ul>
+                                <li><a asp-controller="Sales" asp-action="POS"><i data-feather="hard-drive"></i><span>POS</span></a></li>
+
+                            </ul>
+                            </li>
+                            }
+                        
+                        
+                        @* <li class="submenu-open">
                             <h6 class="submenu-hdr">Promo</h6>
                             <ul>
                                 <li><a href="coupons.html"><i data-feather="shopping-cart"></i><span>Coupons</span></a></li>
                             </ul>
-                        </li>
+                        </li> *@
+                        
+                           
+                            @if(userrole == "SuperAdmin" || userrole == "ShopOwner")
+                            {
                         <li class="submenu-open">
                             <h6 class="submenu-hdr">Purchases</h6>
                             <ul>
-                                <li><a href="purchase-list.html"><i data-feather="shopping-bag"></i><span>Purchases</span></a></li>
-                                <li><a href="purchase-order-report.html"><i data-feather="file-minus"></i><span>Purchase Order</span></a></li>
-                                <li><a href="purchase-returns.html"><i data-feather="refresh-cw"></i><span>Purchase Return</span></a></li>
+                                <li><a asp-controller="Purchase" asp-action="GetPurchase"><i data-feather="shopping-bag"></i><span>Purchases</span></a></li>
+                                <li><a asp-controller="Purchase" asp-action="GetPurchaseOrderReport"><i data-feather="file-minus"></i><span>Purchase Order</span></a></li>
+                                <li><a asp-controller="Purchase" asp-action="GetPurchaseReturn"><i data-feather="refresh-cw"></i><span>Purchase Return</span></a></li>
                             </ul>
                         </li>
-                        <li class="submenu-open">
-                            <h6 class="submenu-hdr">Finance & Accounts</h6>
-                            <ul>
-                                <li class="submenu">
-                                    <a href="javascript:void(0);"><i data-feather="file-text"></i><span>Expenses</span><span class="menu-arrow"></span></a>
-                                    <ul>
-                                        <li><a href="expense-list.html">Expenses</a></li>
-                                        <li><a href="expense-category.html">Expense Category</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+                            }
+                            
+                           
+                       
+                        
+                        
+                        @if(userrole == "SuperAdmin" || userrole == "Admin")
+                        {
                         <li class="submenu-open">
                             <h6 class="submenu-hdr">Peoples</h6>
                             <ul>
-                                <li><a href="customers.html"><i data-feather="user"></i><span>Customers</span></a></li>
-                                <li><a href="suppliers.html"><i data-feather="users"></i><span>Suppliers</span></a></li>
-                                <li><a href="store-list.html"><i data-feather="home"></i><span>Stores</span></a></li>
+                                <li><a asp-controller="Peoples" asp-action="GetCustomer"><i data-feather="user"></i><span>Customers</span></a></li>
+                                <li><a asp-controller="Peoples" asp-action="GetSupplier"><i data-feather="users"></i><span>Suppliers</span></a></li>
+                                <li><a asp-controller="Peoples" asp-action="GetStore"><i data-feather="home"></i><span>Stores</span></a></li>
                                 <li>
-                                    <a href="warehouse.html"><i data-feather="archive"></i><span>Warehouses</span></a>
+                                    <a asp-controller="Peoples" asp-action="GetWarehouse"><i data-feather="archive"></i><span>Warehouses</span></a>
                                 </li>
                             </ul>
                         </li>
+                        }
+                        
                     @*<li class="submenu-open">
                              <h6 class="submenu-hdr">HRM</h6>
                             <ul>
@@ -459,14 +535,14 @@
                                 <li><a href="designation.html"><i data-feather="git-merge"></i><span>Designation</span></a></li>
                                 <li><a href="shift.html"><i data-feather="shuffle"></i><span>Shifts</span></a></li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><i data-feather="book-open"></i><span>Attendence</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><i data-feather="book-open"></i><span>Attendence</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="attendance-employee.html">Employee</a></li>
                                         <li><a href="attendance-admin.html">Admin</a></li>
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><i data-feather="calendar"></i><span>Leaves</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><i data-feather="calendar"></i><span>Leaves</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="leaves-admin.html">Admin Leaves</a></li>
                                         <li><a href="leaves-employee.html">Employee Leaves</a></li>
@@ -491,20 +567,20 @@
                                 <li><a href="sales-report.html"><i data-feather="bar-chart-2"></i><span>Sales Report</span></a></li>
                                 <li><a href="purchase-report.html"><i data-feather="pie-chart"></i><span>Purchase report</span></a></li>
                                 <li><a href="inventory-report.html"><i data-feather="inbox"></i><span>Inventory Report</span></a></li>
-                                <li><a href="invoice-report.html"><i data-feather="file"></i><span>Invoice Report</span></a></li>
+                               @*  <li><a href="invoice-report.html"><i data-feather="file"></i><span>Invoice Report</span></a></li>
                                 <li><a href="supplier-report.html"><i data-feather="user-check"></i><span>Supplier Report</span></a></li>
                                 <li><a href="customer-report.html"><i data-feather="user"></i><span>Customer Report</span></a></li>
                                 <li><a href="expense-report.html"><i data-feather="file"></i><span>Expense Report</span></a></li>
                                 <li><a href="income-report.html"><i data-feather="bar-chart"></i><span>Income Report</span></a></li>
                                 <li><a href="tax-reports.html"><i data-feather="database"></i><span>Tax Report</span></a></li>
-                                <li><a href="profit-and-loss.html"><i data-feather="pie-chart"></i><span>Profit & Loss</span></a></li>
+                                <li><a href="profit-and-loss.html"><i data-feather="pie-chart"></i><span>Profit & Loss</span></a></li> *@
                             </ul>
                         </li>
                         <li class="submenu-open">
                             <h6 class="submenu-hdr">User Management</h6>
                             <ul>
-                                <li><a href="users.html"><i data-feather="user-check"></i><span>Users</span></a></li>
-                                <li><a href="roles-permissions.html"><i data-feather="shield"></i><span>Roles & Permissions</span></a></li>
+                                <li><a asp-controller="User" asp-action="GetUser"><i data-feather="user-check"></i><span>Users</span></a></li>
+                            <li><a asp-controller="User" asp-action="AddRoles"><i data-feather="shield"></i><span>Roles & Permissions</span></a></li>
                                 <li><a href="delete-account.html"><i data-feather="lock"></i><span>Delete Account Request</span></a></li>
                             </ul>
                         </li>
@@ -513,10 +589,10 @@
                             <ul>
                                 <li><a href="profile.html"><i data-feather="user"></i><span>Profile</span></a></li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><i data-feather="shield"></i><span>Authentication</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><i data-feather="shield"></i><span>Authentication</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Login<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Login<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="signin.html">Cover</a></li>
                                                 <li><a href="signin-2.html">Illustration</a></li>
@@ -524,7 +600,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Register<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Register<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="register.html">Cover</a></li>
                                                 <li><a href="register-2.html">Illustration</a></li>
@@ -532,7 +608,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Forgot Password<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Forgot Password<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="forgot-password.html">Cover</a></li>
                                                 <li><a href="forgot-password-2.html">Illustration</a></li>
@@ -540,7 +616,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Reset Password<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Reset Password<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="reset-password.html">Cover</a></li>
                                                 <li><a href="reset-password-2.html">Illustration</a></li>
@@ -548,7 +624,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Email Verification<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Email Verification<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="email-verification.html">Cover</a></li>
                                                 <li><a href="email-verification-2.html">Illustration</a></li>
@@ -556,7 +632,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">2 Step Verification<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">2 Step Verification<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="two-step-verification.html">Cover</a></li>
                                                 <li><a href="two-step-verification-2.html">Illustration</a></li>
@@ -567,14 +643,14 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><i data-feather="file-minus"></i><span>Error Pages</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><i data-feather="file-minus"></i><span>Error Pages</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="error-404.html">404 Error </a></li>
                                         <li><a href="error-500.html">500 Error </a></li>
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><i data-feather="map"></i><span>Places</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><i data-feather="map"></i><span>Places</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="countries.html">Countries</a></li>
                                         <li><a href="states.html">States</a></li>
@@ -595,16 +671,16 @@
                             <h6 class="submenu-hdr">Settings</h6>
                             <ul>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><i data-feather="settings"></i><span>General Settings</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><i data-feather="settings"></i><span>General Settings</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a asp-controller="Settings" asp-action="Profile">Profile</a></li>
-                                        <li><a href="security-settings.html">Security</a></li>
+                                        @* <li><a href="security-settings.html">Security</a></li> *@
                                         <li><a href="notification.html">Notifications</a></li>
-                                        <li><a href="connected-apps.html">Connected Apps</a></li>
+                                        @* <li><a href="connected-apps.html">Connected Apps</a></li> *@
                                     </ul>
                                 </li>
-                                <li class="submenu">
-                                    <a href="javascript:void(0);"><i data-feather="globe"></i><span>Website Settings</span><span class="menu-arrow"></span></a>
+                               @*  <li class="submenu">
+                                    <a href="#;"><i data-feather="globe"></i><span>Website Settings</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="system-settings.html">System Settings</a></li>
                                         <li><a href="company-settings.html">Company Settings </a></li>
@@ -615,33 +691,33 @@
                                         <li><a href="social-authentication.html">Social Authentication</a></li>
                                         <li><a href="language-settings.html">Language</a></li>
                                     </ul>
-                                </li>
+                                </li> *@
                                 <li class="submenu">
-                                    <a href="javascript:void(0);">
+                                    <a href="#;">
                                         <i data-feather="smartphone"></i>
                                         <span>App Settings</span><span class="menu-arrow"></span>
                                     </a>
                                     <ul>
                                         <li><a href="invoice-settings.html">Invoice</a></li>
-                                        <li><a href="printer-settings.html">Printer</a></li>
+                                        @* <li><a href="printer-settings.html">Printer</a></li>
                                         <li><a href="pos-settings.html">POS</a></li>
-                                        <li><a href="custom-fields.html">Custom Fields</a></li>
+                                        <li><a href="custom-fields.html">Custom Fields</a></li> *@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);">
+                                    <a href="#;">
                                         <i data-feather="monitor"></i>
                                         <span>System Settings</span><span class="menu-arrow"></span>
                                     </a>
                                     <ul>
                                         <li><a href="email-settings.html">Email</a></li>
-                                        <li><a href="sms-gateway.html">SMS Gateways</a></li>
+                                        @* <li><a href="sms-gateway.html">SMS Gateways</a></li>
                                         <li><a href="otp-settings.html">OTP</a></li>
-                                        <li><a href="gdpr-settings.html">GDPR Cookies</a></li>
+                                        <li><a href="gdpr-settings.html">GDPR Cookies</a></li> *@
                                     </ul>
                                 </li>
-                                <li class="submenu">
-                                    <a href="javascript:void(0);">
+                               @*  <li class="submenu">
+                                    <a href="#;">
                                         <i data-feather="dollar-sign"></i>
                                         <span>Settings</span><span class="menu-arrow"></span>
                                     </a>
@@ -653,7 +729,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);">
+                                    <a href="#;">
                                         <i data-feather="hexagon"></i>
                                         <span>Other Settings</span><span class="menu-arrow"></span>
                                     </a>
@@ -661,7 +737,7 @@
                                         <li><a href="storage-settings.html">Storage</a></li>
                                         <li><a href="ban-ip-address.html">Ban IP Address</a></li>
                                     </ul>
-                                </li>
+                                </li> *@
                                 <li>
                                     <a href="signin.html"><i data-feather="log-out"></i><span>Logout</span> </a>
                                 </li>
@@ -671,21 +747,21 @@
                         <li class="submenu-open">
                             <h6 class="submenu-hdr">Help</h6>
                             <ul>
-                                <li><a href="javascript:void(0);"><i data-feather="file-text"></i><span>Documentation</span></a></li>
-                                <li><a href="javascript:void(0);"><i data-feather="lock"></i><span>Changelog v2.0.7</span></a></li>
+                                <li><a href="#;"><i data-feather="file-text"></i><span>Documentation</span></a></li>
+                                <li><a href="#;"><i data-feather="lock"></i><span>Changelog v2.0.7</span></a></li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><i data-feather="file-minus"></i><span>Multi Level</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><i data-feather="file-minus"></i><span>Multi Level</span><span class="menu-arrow"></span></a>
                                     <ul>
-                                        <li><a href="javascript:void(0);">Level 1.1</a></li>
+                                        <li><a href="#;">Level 1.1</a></li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Level 1.2<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Level 1.2<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
-                                                <li><a href="javascript:void(0);">Level 2.1</a></li>
+                                                <li><a href="#;">Level 2.1</a></li>
                                                 <li class="submenu submenu-two submenu-three">
-                                                    <a href="javascript:void(0);">Level 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
+                                                    <a href="#;">Level 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
                                                     <ul>
-                                                        <li><a href="javascript:void(0);">Level 3.1</a></li>
-                                                        <li><a href="javascript:void(0);">Level 3.2</a></li>
+                                                        <li><a href="#;">Level 3.1</a></li>
+                                                        <li><a href="#;">Level 3.2</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -758,18 +834,18 @@
                         <div class="tab-content tab-content-four pt-2">
                             <ul class="tab-pane" id="home" aria-labelledby="home-tab">
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Dashboard</span> <span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Dashboard</span> <span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="index.html">Admin Dashboard</a></li>
                                         <li><a href="sales-dashboard.html">Sales Dashboard</a></li>
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Application</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Application</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="chat.html">Chat</a></li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);"><span>Call</span><span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;"><span>Call</span><span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="video-call.html">Video Call</a></li>
                                                 <li><a href="audio-call.html">Audio Call</a></li>
@@ -814,7 +890,7 @@
                                 <li><a href="stock-adjustment.html"><span>Stock Adjustment</span></a></li>
                                 <li><a href="stock-transfer.html"><span>Stock Transfer</span></a></li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Expenses</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Expenses</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="expense-list.html">Expenses</a></li>
                                         <li><a href="expense-category.html">Expense Category</a></li>
@@ -833,13 +909,13 @@
                                 <li><a href="designation.html"><span>Designation</span></a></li>
                                 <li><a href="shift.html"><span>Shifts</span></a></li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Attendence</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Attendence</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="attendance-employee.html">Employee Attendence</a></li>
                                         <li><a href="attendance-admin.html">Admin Attendence</a></li>
                                     </ul>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Leaves</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Leaves</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="leaves-admin.html">Admin Leaves</a></li>
                                         <li><a href="leaves-employee.html">Employee Leaves</a></li>
@@ -872,7 +948,7 @@
                                 <li><a href="roles-permissions.html"><span>Roles & Permissions</span></a></li>
                                 <li><a href="delete-account.html"><span>Delete Account Request</span></a></li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);">
+                                    <a href="#;">
                                         <span>Base UI</span><span class="menu-arrow"></span>
                                     </a>
                                     <ul>
@@ -909,7 +985,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);">
+                                    <a href="#;">
                                         <span>Advanced UI</span><span class="menu-arrow"></span>
                                     </a>
                                     <ul>
@@ -926,7 +1002,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Charts</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Charts</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="chart-apex.html">Apex Charts</a></li>
                                         <li><a href="chart-c3.html">Chart C3</a></li>
@@ -937,7 +1013,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Icons</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Icons</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="icon-fontawesome.html">Fontawesome Icons</a></li>
                                         <li><a href="icon-feather.html">Feather Icons</a></li>
@@ -952,12 +1028,12 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);">
+                                    <a href="#;">
                                         <span>Forms</span><span class="menu-arrow"></span>
                                     </a>
                                     <ul>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Form Elements<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Form Elements<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="form-basic-inputs.html">Basic Inputs</a></li>
                                                 <li><a href="form-checkbox-radios.html">Checkbox & Radios</a></li>
@@ -969,7 +1045,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Layouts<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Layouts<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="form-horizontal.html">Horizontal Form</a></li>
                                                 <li><a href="form-vertical.html">Vertical Form</a></li>
@@ -982,7 +1058,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Tables</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Tables</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="tables-basic.html">Basic Tables </a></li>
                                         <li><a href="data-tables.html">Data Table </a></li>
@@ -992,10 +1068,10 @@
                             <ul class="tab-pane" id="document" aria-labelledby="set-tab5">
                                 <li><a href="profile.html"><span>Profile</span></a></li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Authentication</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Authentication</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Login<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Login<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="signin.html">Cover</a></li>
                                                 <li><a href="signin-2.html">Illustration</a></li>
@@ -1003,7 +1079,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Register<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Register<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="register.html">Cover</a></li>
                                                 <li><a href="register-2.html">Illustration</a></li>
@@ -1011,7 +1087,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Forgot Password<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Forgot Password<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="forgot-password.html">Cover</a></li>
                                                 <li><a href="forgot-password-2.html">Illustration</a></li>
@@ -1019,7 +1095,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Reset Password<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Reset Password<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="reset-password.html">Cover</a></li>
                                                 <li><a href="reset-password-2.html">Illustration</a></li>
@@ -1027,7 +1103,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Email Verification<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Email Verification<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="email-verification.html">Cover</a></li>
                                                 <li><a href="email-verification-2.html">Illustration</a></li>
@@ -1035,7 +1111,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">2 Step Verification<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">2 Step Verification<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="two-step-verification.html">Cover</a></li>
                                                 <li><a href="two-step-verification-2.html">Illustration</a></li>
@@ -1046,14 +1122,14 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Error Pages</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Error Pages</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="error-404.html">404 Error </a></li>
                                         <li><a href="error-500.html">500 Error </a></li>
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Places</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Places</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="countries.html">Countries</a></li>
                                         <li><a href="states.html">States</a></li>
@@ -1071,7 +1147,7 @@
                             </ul>
                             <ul class="tab-pane" id="settings" aria-labelledby="set-tab6">
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>General Settings</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>General Settings</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="general-settings.html">Profile</a></li>
                                         <li><a href="security-settings.html">Security</a></li>
@@ -1080,7 +1156,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Website Settings</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Website Settings</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="system-settings.html">System Settings</a></li>
                                         <li><a href="company-settings.html">Company Settings </a></li>
@@ -1093,7 +1169,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>App Settings</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>App Settings</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="invoice-settings.html">Invoice</a></li>
                                         <li><a href="printer-settings.html">Printer</a></li>
@@ -1102,7 +1178,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>System Settings</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>System Settings</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="email-settings.html">Email</a></li>
                                         <li><a href="sms-gateway.html">SMS Gateways</a></li>
@@ -1111,7 +1187,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Financial Settings</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Financial Settings</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="payment-gateway-settings.html">Payment Gateway</a></li>
                                         <li><a href="bank-settings-grid.html">Bank Accounts</a></li>
@@ -1120,27 +1196,27 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Other Settings</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Other Settings</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="storage-settings.html">Storage</a></li>
                                         <li><a href="ban-ip-address.html">Ban IP Address</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="javascript:void(0);"><span>Documentation</span></a></li>
-                                <li><a href="javascript:void(0);"><span>Changelog v2.0.7</span></a></li>
+                                <li><a href="#;"><span>Documentation</span></a></li>
+                                <li><a href="#;"><span>Changelog v2.0.7</span></a></li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Multi Level</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Multi Level</span><span class="menu-arrow"></span></a>
                                     <ul>
-                                        <li><a href="javascript:void(0);">Level 1.1</a></li>
+                                        <li><a href="#;">Level 1.1</a></li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Level 1.2<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Level 1.2<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
-                                                <li><a href="javascript:void(0);">Level 2.1</a></li>
+                                                <li><a href="#;">Level 2.1</a></li>
                                                 <li class="submenu submenu-two submenu-three">
-                                                    <a href="javascript:void(0);">Level 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
+                                                    <a href="#;">Level 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
                                                     <ul>
-                                                        <li><a href="javascript:void(0);">Level 3.1</a></li>
-                                                        <li><a href="javascript:void(0);">Level 3.2</a></li>
+                                                        <li><a href="#;">Level 3.1</a></li>
+                                                        <li><a href="#;">Level 3.2</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -1161,18 +1237,18 @@
                             <a href="index.html"><i data-feather="grid"></i><span> Main Menu</span> <span class="menu-arrow"></span></a>
                             <ul>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Dashboard</span> <span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Dashboard</span> <span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="index.html">Admin Dashboard</a></li>
                                         <li><a href="sales-dashboard.html">Sales Dashboard</a></li>
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Application</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Application</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="chat.html">Chat</a></li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);"><span>Call</span><span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;"><span>Call</span><span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="video-call.html">Video Call</a></li>
                                                 <li><a href="audio-call.html">Audio Call</a></li>
@@ -1189,7 +1265,7 @@
                             </ul>
                         </li>
                         <li class="submenu">
-                            <a href="javascript:void(0);" class="active subdrop"><img src="assets/img/icons/product.svg" alt="img"><span> Inventory </span> <span class="menu-arrow"></span></a>
+                            <a href="#;" class="active subdrop"><img src="assets/img/icons/product.svg" alt="img"><span> Inventory </span> <span class="menu-arrow"></span></a>
                             <ul>
                                 <li><a href="product-list.html"><span>Products</span></a></li>
                                 <li><a href="add-product.html"><span>Create Product</span></a></li>
@@ -1206,10 +1282,10 @@
                             </ul>
                         </li>
                         <li class="submenu">
-                            <a href="javascript:void(0);"><img src="assets/img/icons/purchase1.svg" alt="img"><span>Sales &amp; Purchase</span> <span class="menu-arrow"></span></a>
+                            <a href="#;"><img src="assets/img/icons/purchase1.svg" alt="img"><span>Sales &amp; Purchase</span> <span class="menu-arrow"></span></a>
                             <ul>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Sales</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Sales</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="sales-list.html"><span>Sales</span></a></li>
                                         <li><a href="invoice-report.html"><span>Invoices</span></a></li>
@@ -1220,7 +1296,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Purchase</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Purchase</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="purchase-list.html"><span>Purchases</span></a></li>
                                         <li><a href="purchase-order-report.html"><span>Purchase Order</span></a></li>
@@ -1231,7 +1307,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Expenses</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Expenses</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="expense-list.html">Expenses</a></li>
                                         <li><a href="expense-category.html">Expense Category</a></li>
@@ -1240,10 +1316,10 @@
                             </ul>
                         </li>
                         <li class="submenu">
-                            <a href="javascript:void(0);"><img src="assets/img/icons/users1.svg" alt="img"><span>User Management</span> <span class="menu-arrow"></span></a>
+                            <a href="#;"><img src="assets/img/icons/users1.svg" alt="img"><span>User Management</span> <span class="menu-arrow"></span></a>
                             <ul>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>People</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>People</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="customers.html"><span>Customers</span></a></li>
                                         <li><a href="suppliers.html"><span>Suppliers</span></a></li>
@@ -1252,14 +1328,14 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Roles &amp; Permissions</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Roles &amp; Permissions</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="roles-permissions.html"><span>Roles & Permissions</span></a></li>
                                         <li><a href="delete-account.html"><span>Delete Account Request</span></a></li>
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Base UI</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Base UI</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="ui-alerts.html">Alerts</a></li>
                                         <li><a href="ui-accordion.html">Accordion</a></li>
@@ -1294,7 +1370,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Advanced UI</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Advanced UI</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="ui-ribbon.html">Ribbon</a></li>
                                         <li><a href="ui-clipboard.html">Clipboard</a></li>
@@ -1309,7 +1385,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Charts</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Charts</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="chart-apex.html">Apex Charts</a></li>
                                         <li><a href="chart-c3.html">Chart C3</a></li>
@@ -1320,7 +1396,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Primary Icons</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Primary Icons</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="icon-fontawesome.html">Fontawesome Icons</a></li>
                                         <li><a href="icon-feather.html">Feather Icons</a></li>
@@ -1330,7 +1406,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Secondary Icons</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Secondary Icons</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="icon-simpleline.html">Simpleline Icons</a></li>
                                         <li><a href="icon-themify.html">Themify Icons</a></li>
@@ -1340,10 +1416,10 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span> Forms</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span> Forms</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);"><span>Form Elements</span><span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;"><span>Form Elements</span><span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="form-basic-inputs.html">Basic Inputs</a></li>
                                                 <li><a href="form-checkbox-radios.html">Checkbox & Radios</a></li>
@@ -1355,7 +1431,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);"><span> Layouts</span><span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;"><span> Layouts</span><span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="form-horizontal.html">Horizontal Form</a></li>
                                                 <li><a href="form-vertical.html">Vertical Form</a></li>
@@ -1368,7 +1444,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Tables</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Tables</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="tables-basic.html">Basic Tables </a></li>
                                         <li><a href="data-tables.html">Data Table </a></li>
@@ -1377,14 +1453,14 @@
                             </ul>
                         </li>
                         <li class="submenu">
-                            <a href="javascript:void(0);"><i data-feather="user"></i><span>Profile</span> <span class="menu-arrow"></span></a>
+                            <a href="#;"><i data-feather="user"></i><span>Profile</span> <span class="menu-arrow"></span></a>
                             <ul>
                                 <li><a href="profile.html"><span>Profile</span></a></li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Authentication</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Authentication</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Login<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Login<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="signin.html">Cover</a></li>
                                                 <li><a href="signin-2.html">Illustration</a></li>
@@ -1392,7 +1468,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Register<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Register<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="register.html">Cover</a></li>
                                                 <li><a href="register-2.html">Illustration</a></li>
@@ -1400,7 +1476,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Forgot Password<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Forgot Password<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="forgot-password.html">Cover</a></li>
                                                 <li><a href="forgot-password-2.html">Illustration</a></li>
@@ -1408,7 +1484,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Reset Password<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Reset Password<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="reset-password.html">Cover</a></li>
                                                 <li><a href="reset-password-2.html">Illustration</a></li>
@@ -1416,7 +1492,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Email Verification<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Email Verification<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="email-verification.html">Cover</a></li>
                                                 <li><a href="email-verification-2.html">Illustration</a></li>
@@ -1424,7 +1500,7 @@
                                             </ul>
                                         </li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">2 Step Verification<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">2 Step Verification<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
                                                 <li><a href="two-step-verification.html">Cover</a></li>
                                                 <li><a href="two-step-verification-2.html">Illustration</a></li>
@@ -1435,7 +1511,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Pages</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Pages</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="error-404.html">404 Error </a></li>
                                         <li><a href="error-500.html">500 Error </a></li>
@@ -1451,14 +1527,14 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Places</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Places</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="countries.html">Countries</a></li>
                                         <li><a href="states.html">States</a></li>
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Employees</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Employees</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="employees-grid.html"><span>Employees</span></a></li>
                                         <li><a href="department-grid.html"><span>Departments</span></a></li>
@@ -1467,14 +1543,14 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Attendence</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Attendence</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="attendance-employee.html">Employee Attendence</a></li>
                                         <li><a href="attendance-admin.html">Admin Attendence</a></li>
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Leaves &amp; Holidays</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Leaves &amp; Holidays</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="leaves-admin.html">Admin Leaves</a></li>
                                         <li><a href="leaves-employee.html">Employee Leaves</a></li>
@@ -1492,7 +1568,7 @@
                             </ul>
                         </li>
                         <li class="submenu">
-                            <a href="javascript:void(0);"><img src="assets/img/icons/printer.svg" alt="img"><span>Reports</span> <span class="menu-arrow"></span></a>
+                            <a href="#;"><img src="assets/img/icons/printer.svg" alt="img"><span>Reports</span> <span class="menu-arrow"></span></a>
                             <ul>
                                 <li><a href="sales-report.html"><span>Sales Report</span></a></li>
                                 <li><a href="purchase-report.html"><span>Purchase report</span></a></li>
@@ -1507,10 +1583,10 @@
                             </ul>
                         </li>
                         <li class="submenu">
-                            <a href="javascript:void(0);"><img src="assets/img/icons/settings.svg" alt="img"><span> Settings</span> <span class="menu-arrow"></span></a>
+                            <a href="#;"><img src="assets/img/icons/settings.svg" alt="img"><span> Settings</span> <span class="menu-arrow"></span></a>
                             <ul>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>General Settings</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>General Settings</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="general-settings.html">Profile</a></li>
                                         <li><a href="security-settings.html">Security</a></li>
@@ -1519,7 +1595,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Website Settings</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Website Settings</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="system-settings.html">System Settings</a></li>
                                         <li><a href="company-settings.html">Company Settings </a></li>
@@ -1532,7 +1608,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>App Settings</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>App Settings</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="invoice-settings.html">Invoice</a></li>
                                         <li><a href="printer-settings.html">Printer</a></li>
@@ -1541,7 +1617,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>System Settings</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>System Settings</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="email-settings.html">Email</a></li>
                                         <li><a href="sms-gateway.html">SMS Gateways</a></li>
@@ -1550,7 +1626,7 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Financial Settings</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Financial Settings</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="payment-gateway-settings.html">Payment Gateway</a></li>
                                         <li><a href="bank-settings-grid.html">Bank Accounts</a></li>
@@ -1559,27 +1635,27 @@
                                     </ul>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Other Settings</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Other Settings</span><span class="menu-arrow"></span></a>
                                     <ul>
                                         <li><a href="storage-settings.html">Storage</a></li>
                                         <li><a href="ban-ip-address.html">Ban IP Address</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="javascript:void(0);"><span>Documentation</span></a></li>
-                                <li><a href="javascript:void(0);"><span>Changelog v2.0.7</span></a></li>
+                                <li><a href="#;"><span>Documentation</span></a></li>
+                                <li><a href="#;"><span>Changelog v2.0.7</span></a></li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"><span>Multi Level</span><span class="menu-arrow"></span></a>
+                                    <a href="#;"><span>Multi Level</span><span class="menu-arrow"></span></a>
                                     <ul>
-                                        <li><a href="javascript:void(0);">Level 1.1</a></li>
+                                        <li><a href="#;">Level 1.1</a></li>
                                         <li class="submenu submenu-two">
-                                            <a href="javascript:void(0);">Level 1.2<span class="menu-arrow inside-submenu"></span></a>
+                                            <a href="#;">Level 1.2<span class="menu-arrow inside-submenu"></span></a>
                                             <ul>
-                                                <li><a href="javascript:void(0);">Level 2.1</a></li>
+                                                <li><a href="#;">Level 2.1</a></li>
                                                 <li class="submenu submenu-two submenu-three">
-                                                    <a href="javascript:void(0);">Level 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
+                                                    <a href="#;">Level 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
                                                     <ul>
-                                                        <li><a href="javascript:void(0);">Level 3.1</a></li>
-                                                        <li><a href="javascript:void(0);">Level 3.2</a></li>
+                                                        <li><a href="#;">Level 3.1</a></li>
+                                                        <li><a href="#;">Level 3.2</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -1602,7 +1678,7 @@
         @* <script src="~/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
         <script src="~/bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script src="~/bootstrap/js/bootstrap.min.js" type="text/javascript"></script> *@
-        
+    <script data-cfasync="false" src="~/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
         <script src="~/assets/js/jquery-3.7.1.min.js" type="text/javascript"></script>
 
         <script src="~/assets/js/feather.min.js" type="text/javascript"></script>
@@ -1615,7 +1691,8 @@
         <script src="~/assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
         <script src="~/assets/js/moment.min.js" type="text/javascript"></script>
 
-        <script src="~/assets/js/theme-script.js" type="text/javascript"></script>
+        
+
 
 
         <script src="~/assets/plugins/apexchart/apexcharts.min.js" type="text/javascript"></script>
@@ -1643,7 +1720,7 @@
         <script src="~/assets/plugins/jvectormap/jquery-jvectormap-uk_countries-mill.js" type="text/javascript"></script>
         <script src="~/assets/plugins/jvectormap/jquery-jvectormap-in-mill.js" type="text/javascript"></script>
         <script src="~/assets/js/jvectormap.js" type="text/javascript"></script>
-        <script src="~/assets/js/theme-script.js" type="text/javascript"></script>
+        
         <script src="~/assets/js/script.js" type="text/javascript"></script>
     <script src="~/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="9110e14dae4e2dea1eedcb15-|49" defer></script>
     @* <script src="~/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" type="text/javascript"></script> *@
@@ -1661,7 +1738,7 @@
                 });
             });
         </script>
-
+  
         @await RenderSectionAsync("Scripts", required: false)
     
 

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Product
+@{
     ViewData["Title"] = "AddProduct Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -15,7 +16,7 @@
             <ul class="table-top-head">
                 <li>
                     <div class="page-btn">
-                        <a href="product-list.html" class="btn btn-secondary"><i data-feather="arrow-left" class="me-2"></i>Back to Product</a>
+                        <a asp-controller="InventoryManagement" asp-action="GetProductList" class="btn btn-secondary"><i data-feather="arrow-left" class="me-2"></i>Back to Product</a>
                     </div>
                 </li>
                 <li>
@@ -876,3 +877,25 @@
     </ul>
 </div>
 
+@section scripts {
+        <script>
+        var ctt = "";
+        var DropStore = {
+            init: function (ctt) {
+                var url = '/People/FetchDetailDropDown?dropdesc=SingleStoreList';
+                $.get(url,
+                    function (response) {
+                        var availabledata = response.data;
+                        $("#BranchName").empty();
+
+                        for (var i = 0; i < availabledata.length; i++) {
+                            $("#BranchName").append(new Option(availabledata[i].text, availabledata[i].value));
+                            $("BranchName")[0].selectedIndex = 0;
+                        }
+                    });
+            }
+        }
+        </script>
+                
+            
+}

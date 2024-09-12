@@ -1,4 +1,5 @@
-﻿@{
+﻿@model TradeLendaInventory.Models.ViewModel.ProductViewModel
+@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -96,7 +97,7 @@
             </div>
         </div>
 
-        <div class="row">
+        @* <div class="row">
             <div class="col-xl-7 col-sm-12 col-12 d-flex">
                 <div class="card flex-fill">
                     <div class="card-header d-flex justify-content-between align-items-center">
@@ -200,7 +201,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> *@
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Expired Products</h4>
@@ -224,36 +225,39 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <div class="productimgname">
-                                        <a href="javascript:void(0);" class="product-img stock-img">
-                                            <img src="assets/img/products/expire-product-01.png" alt="product">
-                                        </a>
-                                        <a href="javascript:void(0);">Red Premium Handy </a>
-                                    </div>
-                                </td>
-                                <td><a href="javascript:void(0);">PT006</a></td>
-                                <td>17 Jan 2023</td>
-                                <td>29 Mar 2023</td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class=" confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
+                            @foreach(var item in Model.Products)
+                            {
+                                <tr>
+                                    <td>
+                                        <label class="checkboxs">
+                                            <input type="checkbox">
+                                            <span class="checkmarks"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <div class="productimgname">
+                                            <a href="javascript:void(0);" class="product-img stock-img">
+                                                <img src="@item.ProductImageUrl" alt="product">
+                                            </a>
+                                            <a href="javascript:void(0);">@item.ProductName </a>
+                                        </div>
+                                    </td>
+                                    <td><a href="javascript:void(0);">@item.SKU</a></td>
+                                    <td>@item.ManufacturedDate</td>
+                                    <td>@item.ExpiredDate</td>
+                                    <td class="action-table-data">
+                                        <div class="edit-delete-action">
+                                            <a class="me-2 p-2" href="#">
+                                                <i data-feather="edit" class="feather-edit"></i>
+                                            </a>
+                                            <a class=" confirm-text p-2" href="javascript:void(0);">
+                                                <i data-feather="trash-2" class="feather-trash-2"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                            @* <tr>
                                 <td>
                                     <label class="checkboxs">
                                         <input type="checkbox">
@@ -368,7 +372,7 @@
                                         </a>
                                     </div>
                                 </td>
-                            </tr>
+                            </tr> *@
                         </tbody>
                     </table>
                 </div>

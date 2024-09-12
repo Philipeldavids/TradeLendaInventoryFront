@@ -1,4 +1,6 @@
+using NuGet.Common;
 using System.Net;
+using System.Net.Http.Headers;
 using TradeLendaInventory.Utility;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30); // Set the session timeout
@@ -14,9 +15,10 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true; // Make the session cookie essential
 });
 
-builder.Services.AddHttpClient("MyClient", c =>
-{
 
+builder.Services.AddHttpClient("MyClient", c =>
+{   
+    
     c.BaseAddress = new Uri(builder.Configuration[Constants.Keys.ApiBaseUrl]);
     c.DefaultRequestHeaders.Add("Accept", "application/json");
 });
@@ -46,6 +48,6 @@ app.UseAuthentication();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Auth}/{action=SignIn}/{id?}");
+    pattern: "{controller=Sales}/{action=POS}/{id?}");
 
 app.Run();

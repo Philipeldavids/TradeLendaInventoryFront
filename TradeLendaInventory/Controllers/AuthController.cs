@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System.Reflection.Metadata;
 using System.Text;
 using TradeLendaInventory.Models;
+using TradeLendaInventory.Models.ViewModel;
 using TradeLendaInventory.Utility;
 
 namespace TradeLendaInventory.Controllers
@@ -29,16 +30,26 @@ namespace TradeLendaInventory.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-
             HttpResponseMessage response = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.Token, model);
 
+           
             if (response.IsSuccessStatusCode)
             {
                 var tokenResponse = await response.Content.ReadAsStringAsync();
-                var token = JsonConvert.DeserializeObject<TokenResponse>(tokenResponse).Token;
+                var serialize = JsonConvert.DeserializeObject<TokenResponse>(tokenResponse);
+                var token = serialize.Token;
+                var refreshToken = serialize.RefreshToken;
 
+                
+                TempData["UserName"] = serialize.User.UserName;
+                TempData["Role"] = serialize.User.Role.ToString();
+                TempData["IsActive"] = serialize.User.IsActive;
+                
+              
+                
                 // Store token in session or a cookie
                 HttpContext.Session.SetString("JWTToken", token);
+                HttpContext.Session.SetString("RefreshToken", refreshToken);
                 // or
                 //Response.Cookies.Append("JWTToken", token);
 
@@ -50,6 +61,7 @@ namespace TradeLendaInventory.Controllers
         }
         public IActionResult LogOut()
         {
+            HttpContext.Session.Remove("JWTToken");
             return RedirectToAction("SignIn", "Auth");
         }
 
