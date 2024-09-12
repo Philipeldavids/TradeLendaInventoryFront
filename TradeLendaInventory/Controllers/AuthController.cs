@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Reflection.Metadata;
+using System.Security.Claims;
 using System.Text;
 using TradeLendaInventory.Models;
 using TradeLendaInventory.Models.ViewModel;
@@ -40,15 +41,19 @@ namespace TradeLendaInventory.Controllers
                 var token = serialize.Token;
                 var refreshToken = serialize.RefreshToken;
 
-                
+
                 TempData["UserName"] = serialize.User.UserName;
                 TempData["Role"] = serialize.User.Role.ToString();
                 TempData["IsActive"] = serialize.User.IsActive;
-                
-              
-                
+
+
+
+
                 // Store token in session or a cookie
                 HttpContext.Session.SetString("JWTToken", token);
+                HttpContext.Session.SetString("Username", serialize.User.UserName);
+                HttpContext.Session.SetString("Role", serialize.User.Role.ToString());
+                HttpContext.Session.SetString("IsActive", Convert.ToString(serialize.User.IsActive));
                 HttpContext.Session.SetString("RefreshToken", refreshToken);
                 // or
                 //Response.Cookies.Append("JWTToken", token);

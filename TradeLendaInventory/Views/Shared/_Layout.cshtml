@@ -1,6 +1,9 @@
-﻿@{
+﻿@using System.Security.Claims
+@{
     var userrole = "";
-    var IsActive = false;
+    var username = "";
+    bool IsActive = false;
+
 
     if(TempData["Role"] != null)
     {
@@ -317,9 +320,9 @@
                                 <img src="~/assets/img/profiles/avator1.jpg" alt class="img-fluid">
                             </span>
                             <span class="user-detail">
-                                @if(TempData["UserName"] != null && TempData["Role"] != null){
-                                    <span class="user-name">@TempData["UserName"] </span>
-                                    <span class="user-role">@TempData["Role"]</span>
+                                @if(username != null && userrole != null){
+                                    <span class="user-name">@username </span>
+                                    <span class="user-role">@userrole</span>
                                 }
                                 
                             </span>
@@ -333,22 +336,22 @@
                                     <span class="status online"></span>
                                 </span>
                                 <div class="profilesets">
-                                    @if (TempData["UserName"] != null && TempData["Role"] != null)
+                                    @if (username != null && userrole != null)
                                     {
-                                        <h6>@TempData["UserName"] </h6>
-                                        <h5>@TempData["Role"]</h5>
+                                        <h6>@username </h6>
+                                        <h5>@userrole</h5>
                                     }
                                 </div>
                             </div>
                             
                             
                             <hr class="m-0">
-                            @if(IsActive){
-                                <a class="dropdown-item" asp-controller="User" asp-action="GetUserProfile"> <i class="me-2" data-feather="user"></i> My Profile</a>
+                            
+                            <a class="dropdown-item" asp-controller="User" asp-action="GetUserProfile"> <i class="me-2" data-feather="user"></i> My Profile</a>
                             <a class="dropdown-item" asp-controller="Settings" asp-action="Profile"><i class="me-2" data-feather="settings"></i>Settings</a>
                             <hr class="m-0">
                             <a class="dropdown-item logout pb-0" asp-controller="Auth" asp-action="SignIn"><img src="~/assets/img/icons/log-out.svg" class="me-2" alt="img">Logout</a>
-                            }
+                            
                             
                            
                             
@@ -380,12 +383,12 @@
                                 <li class="submenu">
                                     <a href="#" class="subdrop active"><i data-feather="grid"></i><span>Dashboard</span><span class="menu-arrow"></span></a>
                                     <ul id="menuItems" class="menu-items">
-                                    @if(userrole == "SuperAdmin")
+                                    @if(userrole  == "SuperAdmin")
                                     {
                                         <li><a href="~/Home/Index" class="active">Admin Dashboard</a></li>
                                         <li><a asp-controller="Sales" asp-action="Index">Sales Dashboard</a></li>
                                     }
-                                    else if(userrole == "Admin")
+                                    else if(userrole  == "Admin")
                                     {
                                         <li><a href="~/Home/Index" class="active">Admin Dashboard</a></li>
                                     }
@@ -423,7 +426,7 @@
                         </li>
                         
                             
-                            @if(userrole == "SuperAdmin" || userrole == "Admin" || userrole =="ShopOwner")
+                            @if(userrole == "SuperAdmin" || userrole == "Admin" || userrole  =="ShopOwner")
                             {
                                 <li class="submenu-open">
                             <h6 class="submenu-hdr">Inventory</h6>
@@ -446,7 +449,7 @@
                            
                         
                         
-                           @if (userrole == "SuperAdmin" || userrole == "Admin" || userrole == "ShopOwner")
+                           @if (userrole  == "SuperAdmin" || userrole == "Admin" || userrole  == "ShopOwner")
                         {
                         <li class="submenu-open">
                             <h6 class="submenu-hdr">Stock</h6>
@@ -462,7 +465,7 @@
                         }
                    
                         
-                            @if (userrole == "SuperAdmin" || userrole == "ShopOwner")
+                            @if (userrole == "SuperAdmin" || userrole  == "ShopOwner")
                             {
                         <li class="submenu-open">
 
@@ -476,7 +479,7 @@
                                 </ul>
                         </li>
                             }
-                            else if(userrole =="Customer")
+                            else if(userrole  =="Customer")
                             {
                         <li class="submenu-open">
                                     <h6 class="submenu-hdr">Sales</h6>
@@ -496,7 +499,7 @@
                         </li> *@
                         
                            
-                            @if(userrole == "SuperAdmin" || userrole == "ShopOwner")
+                            @if(userrole  == "SuperAdmin" || userrole  == "ShopOwner")
                             {
                         <li class="submenu-open">
                             <h6 class="submenu-hdr">Purchases</h6>
@@ -512,7 +515,7 @@
                        
                         
                         
-                        @if(userrole == "SuperAdmin" || userrole == "Admin")
+                        @if(userrole  == "SuperAdmin" || userrole  == "Admin")
                         {
                         <li class="submenu-open">
                             <h6 class="submenu-hdr">Peoples</h6>
