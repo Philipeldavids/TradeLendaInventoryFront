@@ -1,4 +1,5 @@
-﻿@{
+﻿@model TradeLendaInventory.Models.ViewModel.StoreViewModel
+@{
     ViewData["Title"] = "Store Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -118,98 +119,33 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Thomas </td>
-                                <td>Thomas21 </td>
-                                <td>+12163547758 </td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f88c909795998bb89d80999588949dd69b9795">[email&#160;protected]</a></td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-stores">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Rasmussen </td>
-                                <td>Cras56</td>
-                                <td>+1216358690 </td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="186a796b756d6b6b7d76587d60797568747d367b7775">[email&#160;protected]</a></td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-stores">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Fred john </td>
-                                <td>FredJ25</td>
-                                <td>+1387694357 </td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="305a5f585e705548515d405c551e535f5d">[email&#160;protected]</a></td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-stores">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>James</td>
-                                <td>James 524 </td>
-                                <td>+1416350987 </td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a404b474f596a4f524b475a464f04494547">[email&#160;protected]</a></td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-stores">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
+                            @foreach(var item in Model.Stores)
+                            {
+                                <tr>
+                                    <td>
+                                        <label class="checkboxs">
+                                            <input type="checkbox">
+                                            <span class="checkmarks"></span>
+                                        </label>
+                                    </td>
+                                    <td>@item.StoreName </td>
+                                    <td>@item.UserName </td>
+                                    <td>+@item.PhoneNumber </td>
+                                    <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" >@item.Email</a></td>
+                                    <td><span class="badge badge-linesuccess">@item.Status</span></td>
+                                    <td class="action-table-data">
+                                        <div class="edit-delete-action">
+                                            <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-stores">
+                                                <i data-feather="edit" class="feather-edit"></i>
+                                            </a>
+                                            <a class="confirm-text p-2" href="javascript:void(0);">
+                                                <i data-feather="trash-2" class="feather-trash-2"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+
                         </tbody>
                     </table>
                 </div>
@@ -235,34 +171,34 @@
                         </button>
                     </div>
                     <div class="modal-body custom-modal-body">
-                        <form action="store-list.html">
+                        <form asp-controller="Peoples" asp-action="AddStore" method="post">
                             <div class="mb-3">
                                 <label class="form-label">Store Name</label>
-                                <input type="text" class="form-control">
+                                <input asp-for="store.StoreName" type="text" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">User Name</label>
-                                <input type="text" class="form-control">
+                                <input asp-for="store.UserName" type="text" class="form-control">
                             </div>
-                            <div class="input-blocks mb-3">
+                            @* <div class="input-blocks mb-3">
                                 <label>Password</label>
                                 <div class="pass-group">
-                                    <input type="password" class=" pass-input">
+                                    <input asp-for="store.Password" type="password" class=" pass-input">
                                     <span class="fas toggle-password fa-eye-slash"></span>
                                 </div>
-                            </div>
+                            </div> *@
                             <div class="mb-3">
                                 <label class="form-label">Phone</label>
-                                <input type="text" class="form-control">
+                                <input asp-for="store.PhoneNumber" type="text" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Email</label>
-                                <input type="email" class="form-control">
+                                <input asp-for="store.Email" type="email" class="form-control">
                             </div>
                             <div class="mb-0">
                                 <div class="status-toggle modal-status d-flex justify-content-between align-items-center">
                                     <span class="status-label">Status</span>
-                                    <input type="checkbox" id="user2" class="check" checked>
+                                    <input asp-for="store.Status" type="checkbox" id="user2" class="check" checked>
                                     <label for="user2" class="checktoggle"></label>
                                 </div>
                             </div>

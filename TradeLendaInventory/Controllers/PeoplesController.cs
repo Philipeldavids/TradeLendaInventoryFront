@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
+using System.Runtime.InteropServices;
 using TradeLendaInventory.Models;
 using TradeLendaInventory.Models.ViewModel;
 using TradeLendaInventory.Utility;
@@ -29,30 +31,26 @@ namespace TradeLendaInventory.Controllers
                     };
                     return View(customerView);
                 }
-            
+
             }
             return View();
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddCustomer([FromForm]CustomerModel customer)
+        public async Task<ActionResult> AddCustomer(Customer customer)
         {
+
             var result = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.CustomerAdd, customer);
-            if(result.IsSuccessStatusCode)
+            if (result.IsSuccessStatusCode)
             {
                 return RedirectToAction("GetCustomer", "Peoples");
             }
             return RedirectToAction("GetCustomer", "Peoples");
+
         }
 
-        public IActionResult GetSupplier()
-        {
-            return View();
-        }
-        public IActionResult GetStore()
-        {
-            return View();
-        }
+
+
         [HttpGet]
         public async Task<IActionResult> GetWarehouse()
         {
@@ -72,7 +70,7 @@ namespace TradeLendaInventory.Controllers
 
         [HttpPost]
 
-        public async Task<ActionResult> AddWarehouse(WarehouseModel model)
+        public async Task<ActionResult> AddWarehouse(Warehouse model)
         {
             var result = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.WarehouseAdd, model);
             if (result.IsSuccessStatusCode)
@@ -82,5 +80,64 @@ namespace TradeLendaInventory.Controllers
             return RedirectToAction("GetWarehouse", "Peoples");
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetSupplier()
+        {
+            var result = await _httpClient.GetAsync(Constants.ClientRoutes.SupplierList);
+            if (result.IsSuccessStatusCode)
+            {
+                var res = await result.Content.ReadFromJsonAsync<ServiceResponse<List<Supplier>>>();
+
+                SupplierViewModel viewModel = new SupplierViewModel()
+                {
+                    Suppliers = res.Data
+                };
+                return View(viewModel);
+            }
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddSupplier(Supplier supplier)
+        {
+            var result = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.SupplierADD, supplier);
+
+            if (result.IsSuccessStatusCode)
+            {
+
+                return RedirectToAction("GetSupplier", "Peoples");
+
+            }
+            return RedirectToAction("GetSupplier", "Peoples");
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetStore()
+        {
+            var resut = await _httpClient.GetAsync(Constants.ClientRoutes.StoreList);
+            {
+                if (resut.IsSuccessStatusCode)
+                {
+                    var res = await resut.Content.ReadFromJsonAsync<ServiceResponse<List<Store>>>();
+                    StoreViewModel viewModel = new StoreViewModel()
+                    {
+                        Stores = res.Data
+                    };
+                    return View(viewModel);
+                }
+                return View();
+            }
+        }
+
+        public async Task<IActionResult> AddStore(Store store)
+        {
+            var result = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.StoreADD, store);
+
+            if(result.IsSuccessStatusCode)
+            {
+                return RedirectToAction("GetStore", "Peoples");
+            }
+            return RedirectToAction("GetStore", "Peoples");
+        }
+
     }
 }
+

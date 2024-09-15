@@ -128,7 +128,7 @@
                                     <td>
                                         <div class="userimgname cust-imgname">
                                             <a href="javascript:void(0);" class="product-img">
-                                                <img src="~/assets/img/users/user-23.jpg" alt="product">
+                                                <img src="~/assets/img/users/user-05.jpg" alt="product">
                                             </a>
                                             <a href="javascript:void(0);">@item.FullName.Split(" ")[0].ToString()</a>
                                         </div>
@@ -205,37 +205,37 @@
                                 <div class="col-lg-4 pe-0">
                                     <div class="mb-3">
                                         <label class="form-label">Customer Name</label>
-                                        <input asp-for="model.Name" type="text" class="form-control">
+                                        <input asp-for="customer.FullName" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 pe-0">
                                     <div class="mb-3">
                                         <label class="form-label">Email</label>
-                                        <input asp-for="model.Email" type="email" class="form-control">
+                                        <input asp-for="customer.Email" type="email" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 pe-0">
                                     <div class="input-blocks">
                                         <label class="mb-2">Phone</label>
-                                        <input asp-for="model.PhoneNumber" class="form-control form-control-lg group_formcontrol" id="phone" name="phone" type="text">
+                                        <input asp-for="customer.PhoneNumber" class="form-control form-control-lg group_formcontrol" id="phone" type="text">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 pe-0">
                                     <div class="mb-3">
                                         <label class="form-label">Address</label>
-                                        <input asp-for="model.Address" type="text" class="form-control">
+                                        <input asp-for="customer.ShippingAddress" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 pe-0">
                                     <div class="mb-3">
                                         <label class="form-label">City</label>
-                                        <input asp-for="model.City" type="text" class="form-control">
+                                        <input asp-for="customer.City" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 pe-0">
                                     <div class="mb-3">
                                         <label class="form-label">Country</label>
-                                        <select asp-for="model.Country" class="select">
+                                        <select asp-for="customer.Country" class="select">
                                             <option>Choose</option>
                                             <option value ="Nigeria">Nigeria</option>
                                             
@@ -245,7 +245,7 @@
                                 <div class="col-lg-12">
                                     <div class="mb-3 input-blocks">
                                         <label class="form-label">Descriptions</label>
-                                        <textarea asp-for="model.Description" class="form-control mb-1"></textarea>
+                                        <textarea asp-for="customer.Description" class="form-control mb-1"></textarea>
                                         <p>Maximum 60 Characters</p>
                                     </div>
                                 </div>

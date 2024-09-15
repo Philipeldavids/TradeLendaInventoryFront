@@ -17,5 +17,16 @@ namespace TradeLendaInventory.Controllers
         {
             return View();
         }
+
+        public IActionResult GetSalesInvoice()
+        {
+            return View();
+
+        }
+
+        public async Task<IActionResult> GetSalesReturn()
+        {
+            return View();
+        }
     }
 }

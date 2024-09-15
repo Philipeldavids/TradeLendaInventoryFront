@@ -1,4 +1,5 @@
-﻿@{
+﻿@model TradeLendaInventory.Models.ViewModel.SupplierViewModel
+@{
     ViewData["Title"] = "Supplier Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -111,457 +112,44 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <div class="productimgname">
-                                        <a href="javascript:void(0);" class="product-img supplier-img">
-                                            <img src="assets/img/supplier/supplier-01.png" alt="product">
-                                        </a>
-                                        <div>
-                                            <a href="javascript:void(0);" class="ms-2">Apex Computers</a>
+                            @foreach(var item in Model.Suppliers){
+                                <tr>
+                                    <td>
+                                        <label class="checkboxs">
+                                            <input type="checkbox">
+                                            <span class="checkmarks"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <div class="productimgname">
+                                            <a href="javascript:void(0);" class="product-img supplier-img">
+                                                <img src="~/assets/img/supplier/supplier-01.png" alt="product">
+                                            </a>
+                                            <div>
+                                                <a href="javascript:void(0);" class="ms-2">@item.Name</a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>201</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6908190c110a0604191c1d0c1b1a290c11080419050c470a0604">[email&#160;protected]</a></td>
-                                <td>+12163547758 </td>
-                                <td>Germany</td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="eye" class="action-eye"></i>
-                                        </a>
-                                        <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <div class="productimgname">
-                                        <a href="javascript:void(0);" class="product-img supplier-img">
-                                            <img src="assets/img/supplier/supplier-02.png" alt="product">
-                                        </a>
-                                        <div>
-                                            <a href="javascript:void(0);" class="ms-2">Beats Headphones</a>
+                                    </td>
+                                    <td>@item.Code</td>
+                                    <td><a href="~/cdn-cgi/l/email-protection" class="__cf_email__">@item.Email</a></td>
+                                    <td>+@item.PhoneNumber </td>
+                                    <td>@item.Country</td>
+                                    <td class="action-table-data">
+                                        <div class="edit-delete-action">
+                                            <a class="me-2 p-2 mb-0" href="javascript:void(0);">
+                                                <i data-feather="eye" class="action-eye"></i>
+                                            </a>
+                                            <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units">
+                                                <i data-feather="edit" class="feather-edit"></i>
+                                            </a>
+                                            <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);">
+                                                <i data-feather="trash-2" class="feather-trash-2"></i>
+                                            </a>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>202</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2240474356514a474346524a4d4c475162475a434f524e470c414d4f">[email&#160;protected]</a></td>
-                                <td>+16372895190 </td>
-                                <td>Mexico</td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="eye" class="action-eye"></i>
-                                        </a>
-                                        <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <div class="productimgname">
-                                        <a href="javascript:void(0);" class="product-img supplier-img">
-                                            <img src="assets/img/supplier/supplier-03.png" alt="product">
-                                        </a>
-                                        <div>
-                                            <a href="javascript:void(0);" class="ms-2">Dazzle Shoes</a>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>203</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="680c091212040d1b00070d1b280d10090518040d460b0705">[email&#160;protected]</a></td>
-                                <td>+17589201739</td>
-                                <td>France</td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="eye" class="action-eye"></i>
-                                        </a>
-                                        <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <div class="productimgname">
-                                        <a href="javascript:void(0);" class="product-img supplier-img">
-                                            <img src="assets/img/supplier/supplier-04.png" alt="product">
-                                        </a>
-                                        <div>
-                                            <a href="javascript:void(0);" class="ms-2">Best Accessories</a>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>204</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="05676076716466666076766a776c607645607d64687569602b666a68">[email&#160;protected]</a></td>
-                                <td>+18934092467</td>
-                                <td>Italy</td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="eye" class="action-eye"></i>
-                                        </a>
-                                        <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <div class="productimgname">
-                                        <a href="javascript:void(0);" class="product-img supplier-img">
-                                            <img src="assets/img/supplier/supplier-05.png" alt="product">
-                                        </a>
-                                        <div>
-                                            <a href="javascript:void(0);" class="ms-2">A-Z Store</a>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>205</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="076673687d747368756247627f666a776b622964686a">[email&#160;protected]</a></td>
-                                <td>+12568749035</td>
-                                <td>Belgium</td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="eye" class="action-eye"></i>
-                                        </a>
-                                        <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <div class="productimgname">
-                                        <a href="javascript:void(0);" class="product-img supplier-img">
-                                            <img src="assets/img/supplier/supplier-06.png" alt="product">
-                                        </a>
-                                        <div>
-                                            <a href="javascript:void(0);" class="ms-2">Hatimi Hardwares</a>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>206</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e880899c81858180899a8c9f899a8d9ba88d90898598848dc68b8785">[email&#160;protected]</a></td>
-                                <td>+19054674627</td>
-                                <td>Austria</td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="eye" class="action-eye"></i>
-                                        </a>
-                                        <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <div class="productimgname">
-                                        <a href="javascript:void(0);" class="product-img supplier-img">
-                                            <img src="assets/img/supplier/supplier-07.png" alt="product">
-                                        </a>
-                                        <div>
-                                            <a href="javascript:void(0);" class="ms-2">Aesthetic Bags</a>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>207</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="22434751564a47564b414043455162475a434f524e470c414d4f">[email&#160;protected]</a></td>
-                                <td>+18943670365</td>
-                                <td>India</td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="eye" class="action-eye"></i>
-                                        </a>
-                                        <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <div class="productimgname">
-                                        <a href="javascript:void(0);" class="product-img supplier-img">
-                                            <img src="assets/img/supplier/supplier-08.png" alt="product">
-                                        </a>
-                                        <div>
-                                            <a href="javascript:void(0);" class="ms-2">Alpha Mobiles</a>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>208</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="09686579616864666b60656c7a496c71686479656c276a6664">[email&#160;protected]</a></td>
-                                <td>+16473894103</td>
-                                <td>Greece</td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="eye" class="action-eye"></i>
-                                        </a>
-                                        <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <div class="productimgname">
-                                        <a href="javascript:void(0);" class="product-img supplier-img">
-                                            <img src="assets/img/supplier/supplier-09.png" alt="product">
-                                        </a>
-                                        <div>
-                                            <a href="javascript:void(0);" class="ms-2">Sigma Chairs</a>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>209</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f5869c929894969d949c8786b5908d9498859990db969a98">[email&#160;protected]</a></td>
-                                <td>+17590274536</td>
-                                <td>Japan</td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="eye" class="action-eye"></i>
-                                        </a>
-                                        <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <div class="productimgname">
-                                        <a href="javascript:void(0);" class="product-img supplier-img">
-                                            <img src="assets/img/supplier/supplier-10.png" alt="product">
-                                        </a>
-                                        <div>
-                                            <a href="javascript:void(0);" class="ms-2">Zenith Bags</a>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>210</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e041b10170a161c1f190d3e1b061f130e121b501d1113">[email&#160;protected]</a></td>
-                                <td>+12564098473</td>
-                                <td>China</td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="eye" class="action-eye"></i>
-                                        </a>
-                                        <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <div class="productimgname">
-                                        <a href="javascript:void(0);" class="product-img supplier-img">
-                                            <img src="assets/img/supplier/supplier-07.png" alt="product">
-                                        </a>
-                                        <div>
-                                            <a href="javascript:void(0);" class="ms-2">Aesthetic Bags</a>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>211</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f5949086819d90819c9697949286b5908d9498859990db969a98">[email&#160;protected]</a></td>
-                                <td>+18943670365</td>
-                                <td>India</td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="eye" class="action-eye"></i>
-                                        </a>
-                                        <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="productimgname">
-                                    <a href="javascript:void(0);" class="product-img supplier-img">
-                                        <img src="assets/img/supplier/supplier-05.png" alt="product">
-                                    </a>
-                                    <a href="javascript:void(0);" class="ms-2">A-Z Store</a>
-                                </td>
-                                <td>212</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dabbaeb5a0a9aeb5a8bf9abfa2bbb7aab6bff4b9b5b7">[email&#160;protected]</a></td>
-                                <td>+12568749035 </td>
-                                <td>Angola</td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="eye" class="action-eye"></i>
-                                        </a>
-                                        <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <div class="productimgname">
-                                        <a href="javascript:void(0);" class="product-img supplier-img">
-                                            <img src="assets/img/supplier/supplier-03.png" alt="product">
-                                        </a>
-                                        <div>
-                                            <a href="javascript:void(0);" class="ms-2">Dazzle Shoes</a>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>213</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6501041f1f0900160d0a001625001d04081509004b060a08">[email&#160;protected]</a></td>
-                                <td>+17589201739</td>
-                                <td>Albania</td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="eye" class="action-eye"></i>
-                                        </a>
-                                        <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
+                            }
+
                         </tbody>
                     </table>
                 </div>
@@ -587,7 +175,7 @@
                         </button>
                     </div>
                     <div class="modal-body custom-modal-body">
-                        <form action="suppliers.html">
+                        <form asp-controller="Peoples" asp-action="AddSupplier" method="post">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="new-employee-field">
@@ -610,50 +198,50 @@
                                 <div class="col-lg-4">
                                     <div class="input-blocks">
                                         <label>Supplier Name</label>
-                                        <input type="text" class="form-control">
+                                        <input asp-for="supplier.Name" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="input-blocks">
                                         <label>Email</label>
-                                        <input type="email" class="form-control">
+                                        <input asp-for="supplier.Email" type="email" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="input-blocks">
                                         <label>Phone</label>
-                                        <input type="text" class="form-control">
+                                        <input asp-for="supplier.PhoneNumber" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="input-blocks">
                                         <label>Address</label>
-                                        <input type="text" class="form-control">
+                                        <input asp-for="supplier.Address" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-10 col-10">
                                     <div class="input-blocks">
                                         <label>City</label>
-                                        <select class="select">
+                                        <select asp-for="supplier.City" class="select">
                                             <option>Choose</option>
-                                            <option>Varrel</option>
+                                            <option value="Lagos">Lagos</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-10 col-10">
-                                    <div class="input-blocks">
+                                    <div class="input-blocks">`
                                         <label>Country</label>
-                                        <select class="select">
+                                        <select asp-for="supplier.Country" class="select">
                                             <option>Choose</option>
-                                            <option>Germany</option>
-                                            <option>Mexico</option>
+                                            <option value="Nigeria">Nigeria</option>
+                                            
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="mb-0 input-blocks">
                                         <label class="form-label">Descriptions</label>
-                                        <textarea class="form-control mb-1"></textarea>
+                                        <textarea asp-for="supplier.Description" class="form-control mb-1"></textarea>
                                         <p>Maximum 600 Characters</p>
                                     </div>
                                 </div>

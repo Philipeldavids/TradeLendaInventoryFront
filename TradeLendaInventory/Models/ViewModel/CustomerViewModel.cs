@@ -4,6 +4,6 @@
     {
         public List<Customer> Customers { get; set; } = new List<Customer>();
 
-        public CustomerModel model { get; set; } = new CustomerModel();
+        public Customer customer { get; set; } = new Customer();
     }
 }

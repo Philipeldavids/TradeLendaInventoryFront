@@ -166,6 +166,12 @@ namespace TradeLendaInventory.Controllers
             }
             return Json("");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetQRCode()
+        {
+            return View();
+        }
         [HttpPut]
         public async Task<IActionResult> SaveEdit(Category category)
         {

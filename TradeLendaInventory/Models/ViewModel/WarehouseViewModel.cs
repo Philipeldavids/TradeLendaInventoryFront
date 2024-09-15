@@ -4,6 +4,6 @@
     {
         public List<Warehouse> Warehouses { get; set; } = new List<Warehouse>();
 
-        public WarehouseModel warehouseModel { get; set; }  = new WarehouseModel();
+        public Warehouse warehouse { get; set; }  = new Warehouse();
     }
 }

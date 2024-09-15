@@ -218,13 +218,13 @@
                                             <a href="javascript:void(0);" class="product-img">
                                                 <img src="~/assets/img/users/user-08.jpg" alt="product">
                                             </a>
-                                            <a href="javascript:void(0);">@item.supplier.ContactPerson</a>
+                                            <a href="javascript:void(0);">@item.ContactPerson</a>
                                         </div>
                                     </td>
                                     <td>
                                         @item.ContactPhone
                                     </td>
-                                    <td>@item.Stock.Products.Count</td>
+                                    <td>@item.Quantity</td>
                                     <td>
                                         @item.Stock.Quantity
                                     </td>
@@ -288,13 +288,13 @@
                                 <div class="col-lg-6">
                                     <div class="mb-3">
                                         <label class="form-label">Name</label>
-                                        <input asp-for="warehouseModel.WarehouseName" type="text" class="form-control">
+                                        <input asp-for="warehouse.WarehouseName" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="input-blocks">
                                         <label>Contact Person</label>
-                                        <select asp-for="warehouseModel.ContactPerson" class="select">
+                                        <select asp-for="warehouse.ContactPerson" class="select">
                                             <option>Choose</option>
                                             <option value="Steven">Steven</option>
                                             <option value="Gravely">Gravely</option>
@@ -304,19 +304,19 @@
                                 <div class="col-lg-6">
                                     <div class="mb-3 war-add">
                                         <label class="mb-2">Phone Number</label>
-                                        <input asp-for="warehouseModel.PhoneNumber"class="form-control" id="phone" name="phone" type="text">
+                                        <input asp-for="warehouse.ContactPhone"class="form-control" id="phone" name="phone" type="text">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="mb-3">
                                         <label class="form-label">Work Phone</label>
-                                        <input asp-for="warehouseModel.WorkPhone" type="text" class="form-control">
+                                        <input asp-for="warehouse.supplier.PhoneNumber" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="mb-3">
                                         <label class="form-label">Email</label>
-                                        <input asp-for="warehouseModel.Email" type="email" class="form-control">
+                                        <input asp-for="warehouse.supplier.Email" type="email" class="form-control">
                                     </div>
                                 </div>
                                 <div class="modal-title-head">
@@ -325,19 +325,19 @@
                                 <div class="col-lg-12">
                                     <div class="mb-3">
                                         <label class="form-label">Address 1</label>
-                                        <input asp-for="warehouseModel.Address1" type="text" class="form-control">
+                                        <input asp-for="warehouse.Address1" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="mb-3">
                                         <label class="form-label">Address 2</label>
-                                        <input asp-for="warehouseModel.Address2" type="text" class="form-control">
+                                        <input asp-for="warehouse.Address2" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="input-blocks">
                                         <label>Country</label>
-                                        <select asp-for="warehouseModel.Country"class="select">
+                                        <select asp-for="warehouse.Country"class="select">
                                             <option>Choose</option>
                                             <option value="Nigeria">Nigeria</option>
                                             
@@ -347,19 +347,19 @@
                                 <div class="col-lg-6">
                                     <div class="mb-3">
                                         <label class="form-label">State</label>
-                                        <input asp-for="warehouseModel.State" type="text" class="form-control">
+                                        <input asp-for="warehouse.State" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="mb-3 mb-0">
                                         <label class="form-label">City</label>
-                                        <input asp-for="warehouseModel.City" type="text" class="form-control">
+                                        <input asp-for="warehouse.City" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="mb-3 mb-0">
                                         <label class="form-label">Zipcode</label>
-                                        <input asp-for="warehouseModel.ZipCode" type="text" class="form-control">
+                                        <input asp-for="warehouse.ZipCode" type="text" class="form-control">
                                     </div>
                                 </div>
                             </div>

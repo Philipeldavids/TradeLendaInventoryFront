@@ -1,17 +1,20 @@
-﻿namespace TradeLendaInventory.Models
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace TradeLendaInventory.Models
 {
     public class Stock
     {
-        public string StockId { get; set; } = Guid.NewGuid().ToString();
-        public string WarehouseID { get; set; }
-        public List<Product> Products { get; set; } = new List<Product>();
+        [Key]
+        public string? StockId { get; set; } 
+        public string? WarehouseID { get; set; }      
 
-        public DateTime DateAdded { get; set; }
+        public DateTime? DateAdded { get; set; }
 
-        public string Person { get; set; }
+        public string? Person { get; set; }
 
-        public string Quantity { get; set; }
-
+        public string? Quantity { get; set; }
+        public string?  Shop { get; set; }
 
     }
 
