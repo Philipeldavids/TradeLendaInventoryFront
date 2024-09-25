@@ -14,6 +14,7 @@
             public const string NoStockProductList = "api/inventorymanagement/GetNoStockProducts";
             public const string RecentProductList = "api/inventorymanagement/GEtREcentProducts";
             public const string ExpiredProductList = "api/inventorymanagement/GetExpiredProduct";
+            public const string ProductADD = "api/inventorymanagement/AddProduct";
 
             public const string CategoryADD = "api/InventoryManagement/AddCategory";
             public const string CategoryList = "api/InventoryManagement/Getcategeory";
@@ -23,6 +24,7 @@
 
             public const string CustomerAdd =  "api/Peoples/AddCustomer";
             public const string CustomerList = "api/Peoples/GetCustomer";
+            public const string DeleteCustomer = "api/Peoples/DeleteCustomer/";
             public const string SupplierList = "api/Peoples/GetSupplier";
             public const string SupplierADD =  "api/Peoples/AddSupplier";
             public const string WarehouseADD = "api/Peoples/GetWarehouse";
@@ -34,6 +36,10 @@
             public const string StockList = "api/Stock/get-stock-list";
             public const string StockAdd = "api/Stock/add-new-stock";
             public const string PurchaseADD = "api/Purchase/GetPurchaseListAsync";
+
+            public const string GetUser = "api/UserManagement/GetUsers";
+            public const string AddUser = "api/UserManagement/AddUser";
+
         }
 
         public class Keys

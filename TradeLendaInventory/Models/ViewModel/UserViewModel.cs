@@ -5,11 +5,10 @@ namespace TradeLendaInventory.Models.ViewModel
 {
     public class UserViewModel
     {
-        public string Username { get; set; }
-              
-        public string Role { get; set; }   
 
-        public bool IsActive { get; set; }
+        public List<User> users { get; set; } = new List<User>();
+
+        public  CreateUserRequestDTO userrequest { get; set; } = new CreateUserRequestDTO();
        
     }
    

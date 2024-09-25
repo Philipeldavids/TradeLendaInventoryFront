@@ -1,7 +1,7 @@
 ﻿@model Product
 @{
     ViewData["Title"] = "AddProduct Page";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
 <div class="page-wrapper">
@@ -25,7 +25,7 @@
             </ul>
         </div>
 
-        <form action="add-product.html">
+        <form asp-controller="InventoryManagement" asp-action="SaveProduct" method="post">
             <div class="card">
                 <div class="card-body add-product pb-0">
                     <div class="accordion-card-one accordion" id="accordionExample">
@@ -44,18 +44,18 @@
                                         <div class="col-lg-4 col-sm-6 col-12">
                                             <div class="mb-3 add-product">
                                                 <label class="form-label">Store</label>
-                                                <select class="select">
+                                                <select asp-for="Store"class="select">
                                                     <option>Choose</option>
-                                                    <option>Thomas</option>
-                                                    <option>Rasmussen</option>
-                                                    <option>Fred john</option>
+                                                    <option value="Thomas">Thomas</option>
+                                                    <option value="Rasmussen">Rasmussen</option>
+                                                    <option value="FredJohn">Fred john</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-6 col-12">
                                             <div class="mb-3 add-product">
                                                 <label class="form-label">Warehouse</label>
-                                                <select class="select">
+                                                <select asp-for="Warehouse" class="select">
                                                     <option>Choose</option>
                                                     <option>Legendary</option>
                                                     <option>Determined</option>
@@ -68,19 +68,19 @@
                                         <div class="col-lg-4 col-sm-6 col-12">
                                             <div class="mb-3 add-product">
                                                 <label class="form-label">Product Name</label>
-                                                <input type="text" class="form-control">
+                                                <input asp-for="ProductName" type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-6 col-12">
                                             <div class="mb-3 add-product">
                                                 <label class="form-label">Slug</label>
-                                                <input type="text" class="form-control" readonly>
+                                                <input asp-for="Category.CategorySLug" type="text" class="form-control" readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-6 col-12">
                                             <div class="input-blocks add-product list">
                                                 <label>SKU</label>
-                                                <input type="text" class="form-control list" placeholder="Enter SKU">
+                                                <input asp-for="SKU" type="text" class="form-control list" placeholder="Enter SKU">
                                                 <button type="submit" class="btn btn-primaryadd">
                                                     Generate Code
                                                 </button>
@@ -100,7 +100,7 @@
                                                             </span>
                                                         </a>
                                                     </div>
-                                                    <select class="select">
+                                                    <select asp-for="Category.CategoryName" class="select">
                                                         <option>Choose</option>
                                                         <option>Lenovo</option>
                                                         <option>Electronics</option>
@@ -138,7 +138,7 @@
                                                         <label class="form-label">Brand</label>
                                                         <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#add-units-brand"><i data-feather="plus-circle" class="plus-down-add"></i><span>Add New</span></a>
                                                     </div>
-                                                    <select class="select">
+                                                    <select asp-for="Brand" class="select">
                                                         <option>Choose</option>
                                                         <option>Nike</option>
                                                         <option>Bolt</option>
@@ -151,7 +151,7 @@
                                                         <label class="form-label">Unit</label>
                                                         <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#add-unit"><i data-feather="plus-circle" class="plus-down-add"></i><span>Add New</span></a>
                                                     </div>
-                                                    <select class="select">
+                                                    <select asp-for="Unit"class="select">
                                                         <option>Choose</option>
                                                         <option>Kg</option>
                                                         <option>Pc</option>
@@ -174,7 +174,7 @@
                                         <div class="col-lg-6 col-sm-6 col-12">
                                             <div class="mb-3 add-product">
                                                 <label class="form-label">Barcode Symbology</label>
-                                                <select class="select">
+                                                <select asp-for="Barcode"class="select">
                                                     <option>Choose</option>
                                                     <option>Code34</option>
                                                     <option>Code35</option>
@@ -196,7 +196,7 @@
                                     <div class="col-lg-12">
                                         <div class="input-blocks summer-description-box transfer mb-3">
                                             <label>Description</label>
-                                            <textarea class="form-control h-100" rows="5"></textarea>
+                                            <textarea asp-for="ProductDescription"class="form-control h-100" rows="5"></textarea>
                                             <p class="mt-1">Maximum 60 Characters</p>
                                         </div>
                                     </div>
@@ -244,7 +244,7 @@
                                                 <div class="col-lg-4 col-sm-6 col-12">
                                                     <div class="input-blocks add-product">
                                                         <label>Quantity</label>
-                                                        <input type="text" class="form-control">
+                                                        <input asp-for="Quantity" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-sm-6 col-12">
@@ -304,7 +304,7 @@
                                                                     <div class="add-choosen">
                                                                         <div class="input-blocks">
                                                                             <div class="image-upload">
-                                                                                <input type="file">
+                                                                                <input asp-for="ProductImageUrl"type="file">
                                                                                 <div class="image-uploads">
                                                                                     <i data-feather="plus-circle" class="plus-down-add me-0"></i>
                                                                                     <h4>Add Images</h4>

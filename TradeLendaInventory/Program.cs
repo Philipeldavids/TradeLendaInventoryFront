@@ -21,6 +21,7 @@ builder.Services.AddHttpClient("MyClient", c =>
     
     c.BaseAddress = new Uri(builder.Configuration[Constants.Keys.ApiBaseUrl]);
     c.DefaultRequestHeaders.Add("Accept", "application/json");
+    c.Timeout = TimeSpan.FromMinutes(30);
 });
 //}).ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
 //{

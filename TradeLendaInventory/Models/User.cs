@@ -16,6 +16,10 @@ namespace TradeLendaInventory.Models
         [Required]
         public string PasswordHash { get; set; }
 
+        public string ConfirmPassword { get; set; }
+
+        public string Description {  get; set; }
+
         [AllowNull]
         public Roles Role { get; set; }
         public UserProfile UserProfil { get; set; } = new UserProfile();
@@ -26,7 +30,7 @@ namespace TradeLendaInventory.Models
 
         public bool IsActive { get; set; } = true;
 
-        public string RefreshToken { get; set; }
+        public string? RefreshToken { get; set; }
 
         public DateTime RefreshTokenExpiryTime { get; set; }
     }

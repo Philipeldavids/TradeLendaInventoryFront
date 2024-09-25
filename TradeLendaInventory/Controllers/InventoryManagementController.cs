@@ -40,9 +40,23 @@ namespace TradeLendaInventory.Controllers
             return View();
         }
 
-        public ActionResult AddProduct(Product product)
+        [HttpGet]
+
+        public ActionResult AddProduct(int productid)
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> SaveProduct(Product product)
+        {
+            var result = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.ProductADD, product);
+
+            if (result.IsSuccessStatusCode)
+            {
+                return RedirectToAction("GetProductList", "InventoryManagement");
+            }
+            return RedirectToAction("GetProductList", "InventoryManagement");
         }
 
         [HttpGet]

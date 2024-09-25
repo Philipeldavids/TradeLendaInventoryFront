@@ -5,7 +5,9 @@ namespace TradeLendaInventory.Models
     public class Customer
     {
         
-        [Required]
+       
+        [Key]
+        public string CustomerId { get; set; }
         public string FullName { get; set; }
 
         public int Code { get; set; }

@@ -18637,7 +18637,7 @@ div#global-loader .whirly-loader:not(:required) {
     }
     .mini-sidebar .sidebar {
         width: 80px;
-        overflow: hidden;
+        overflow: auto;
     }
     .expand-menu .sidebar-right {
         display: block;

@@ -40,25 +40,36 @@ namespace TradeLendaInventory.Controllers
                 var serialize = JsonConvert.DeserializeObject<TokenResponse>(tokenResponse);
                 var token = serialize.Token;
                 var refreshToken = serialize.RefreshToken;
+                var roles = serialize.User.Role.ToString();
+
+               
+               ViewBag.Username = serialize.User.UserName;
+                ViewBag.Role = serialize.User.Role.ToString();
+               ViewBag.IsActive= serialize.User.IsActive;
 
 
-                TempData["UserName"] = serialize.User.UserName;
-                TempData["Role"] = serialize.User.Role.ToString();
-                TempData["IsActive"] = serialize.User.IsActive;
 
-
-
-
-                // Store token in session or a cookie
+                                // Store token in session or a cookie
                 HttpContext.Session.SetString("JWTToken", token);
                 HttpContext.Session.SetString("Username", serialize.User.UserName);
                 HttpContext.Session.SetString("Role", serialize.User.Role.ToString());
                 HttpContext.Session.SetString("IsActive", Convert.ToString(serialize.User.IsActive));
                 HttpContext.Session.SetString("RefreshToken", refreshToken);
-                // or
-                //Response.Cookies.Append("JWTToken", token);
 
-                return RedirectToAction("Index", "Home");
+                if (roles == "Admin")
+                {
+
+                    return RedirectToAction("Index", "Home");
+                }
+                else if (roles == "ShopOwner")
+                {
+                    return RedirectToAction("Index", "Sales");
+                }
+                else if (roles == "Customer")
+                {
+                    return RedirectToAction("POS", "Sales");
+                }
+
             }
 
             ModelState.AddModelError("", "Invalid login attempt.");
@@ -82,14 +93,14 @@ namespace TradeLendaInventory.Controllers
             if (!ModelState.IsValid)
                 return View(model);
            
-            
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.Register, model);
-            if (!response.IsSuccessStatusCode)
-            {
-                return View(model);
-            }
-            
-            return RedirectToAction("SignIn", "Auth");
+                HttpResponseMessage response = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.Register, model);
+                if (!response.IsSuccessStatusCode)
+                {
+                    return View(model);
+                }
+                return RedirectToAction("SignIn", "Auth");
+ 
+           
         }
 
         public IActionResult ForgotPassword()
