@@ -1,4 +1,5 @@
-﻿@{
+﻿@model TradeLendaInventory.Models.ViewModel.BrandViewModel
+@{
     ViewData["Title"] = "Brand Page";
     Layout = "~/Views/Shared/_Layout2.cshtml";
 
@@ -118,226 +119,33 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Lenevo</td>
-                                <td><span class="d-flex"><img src="assets/img/brand/brand-icon-01.png" alt></span></td>
-                                <td>25 May 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-brand">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Boat</td>
-                                <td><span class="d-flex"><img src="assets/img/brand/brand-icon-02.png" alt></span></td>
-                                <td>24 Jun 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-brand">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Nike</td>
-                                <td><span class="d-flex"><img src="assets/img/brand/brand-icon-03.png" alt></span></td>
-                                <td>23 Jul 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-brand">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Apple</td>
-                                <td><span class="d-flex"><img src="assets/img/brand/brand-icon-04.png" alt></span></td>
-                                <td>22 Aug 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-brand">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Amazon</td>
-                                <td><span class="d-flex"><img src="assets/img/brand/brand-icon-05.png" alt></span></td>
-                                <td>21 Sep 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-brand">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Woodmart</td>
-                                <td><span class="d-flex"><img src="assets/img/brand/brand-icon-06.png" alt></span></td>
-                                <td>20 Sep 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-brand">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Versace</td>
-                                <td><span class="d-flex"><img src="assets/img/brand/brand-icon-07.png" alt></span></td>
-                                <td>20 Sep 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-brand">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Lava</td>
-                                <td><span class="d-flex"><img src="assets/img/brand/brand-icon-08.png" alt></span></td>
-                                <td>20 Sep 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-brand">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Bently</td>
-                                <td><span class="d-flex"><img src="assets/img/brand/brand-icon-09.png" alt></span></td>
-                                <td>20 Sep 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-brand">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td>Nilkamal</td>
-                                <td><span class="d-flex"><img src="assets/img/brand/brand-icon-10.png" alt></span></td>
-                                <td>20 Sep 2023</td>
-                                <td><span class="badge badge-linesuccess">Active</span></td>
-                                <td class="action-table-data">
-                                    <div class="edit-delete-action">
-                                        <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-brand">
-                                            <i data-feather="edit" class="feather-edit"></i>
-                                        </a>
-                                        <a class="confirm-text p-2" href="javascript:void(0);">
-                                            <i data-feather="trash-2" class="feather-trash-2"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
+                            @foreach(var item in Model.brands)
+                            {
+                                <tr>
+                                    <td>
+                                        <label class="checkboxs">
+                                            <input type="checkbox">
+                                            <span class="checkmarks"></span>
+                                        </label>
+                                    </td>
+                                    <td>@item.BrandName</td>
+                                    <td><span class="d-flex"><img src="@item.Logo" alt></span></td>
+                                    <td>@item.CreatedOn</td>
+                                    <td><span class="badge badge-linesuccess">@item.Status</span></td>
+                                    <td class="action-table-data">
+                                        <div class="edit-delete-action">
+                                            <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-brand">
+                                                <i data-feather="edit" class="feather-edit"></i>
+                                            </a>
+                                            <a class="p-2" asp-controller="InventoryManagement" asp-action="DeleteBrand" asp-route-id="@item.BrandId" onclick="return confirm('Are you sure you want to delete this?')">
+                                                
+                                                <i data-feather="trash-2" class="feather-trash-2"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                            
                         </tbody>
                     </table>
                 </div>
@@ -363,10 +171,10 @@
                         </button>
                     </div>
                     <div class="modal-body custom-modal-body new-employee-field">
-                        <form action="brand-list.html">
+                        <form asp-controller="InventoryManagement" asp-action="AddBrand" method="post">
                             <div class="mb-3">
                                 <label class="form-label">Brand</label>
-                                <input type="text" class="form-control">
+                                <input asp-for="brand.BrandName"type="text" class="form-control">
                             </div>
                             <label class="form-label">Logo</label>
                             <div class="profile-pic-upload mb-3">
@@ -383,7 +191,7 @@
                             <div class="mb-0">
                                 <div class="status-toggle modal-status d-flex justify-content-between align-items-center">
                                     <span class="status-label">Status</span>
-                                    <input type="checkbox" id="user2" class="check" checked>
+                                    <input asp-for="brand.Status" type="checkbox" id="user2" class="check" checked>
                                     <label for="user2" class="checktoggle"></label>
                                 </div>
                             </div>

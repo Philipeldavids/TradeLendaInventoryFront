@@ -44,22 +44,22 @@
                                         <div class="col-lg-4 col-sm-6 col-12">
                                             <div class="mb-3 add-product">
                                                 <label class="form-label">Store</label>
-                                                <select asp-for="Store"class="select">
-                                                    <option>Choose</option>
+                                                <select asp-for="Store" id="storeDropdown" class="select">
+                                                    @* <option>Choose</option>
                                                     <option value="Thomas">Thomas</option>
                                                     <option value="Rasmussen">Rasmussen</option>
-                                                    <option value="FredJohn">Fred john</option>
+                                                    <option value="FredJohn">Fred john</option> *@
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-6 col-12">
                                             <div class="mb-3 add-product">
                                                 <label class="form-label">Warehouse</label>
-                                                <select asp-for="Warehouse" class="select">
-                                                    <option>Choose</option>
+                                                <select asp-for="Warehouse" id="warehouseDropdown" class="select">
+                                                    @* <option>Choose</option>
                                                     <option>Legendary</option>
                                                     <option>Determined</option>
-                                                    <option>Sincere</option>
+                                                    <option>Sincere</option> *@
                                                 </select>
                                             </div>
                                         </div>
@@ -80,8 +80,8 @@
                                         <div class="col-lg-4 col-sm-6 col-12">
                                             <div class="input-blocks add-product list">
                                                 <label>SKU</label>
-                                                <input asp-for="SKU" type="text" class="form-control list" placeholder="Enter SKU">
-                                                <button type="submit" class="btn btn-primaryadd">
+                                                <input asp-for="SKU" id="codeDisplay" type="text" class="form-control list" placeholder="Enter SKU">
+                                                <button type="button" id="generateCode"class="btn btn-primaryadd">
                                                     Generate Code
                                                 </button>
                                             </div>
@@ -93,17 +93,17 @@
                                                 <div class="mb-3 add-product">
                                                     <div class="add-newplus">
                                                         <label class="form-label">Category</label>
-                                                        <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#add-units-category">
+                                                       @*  <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#add-units-category">
                                                             <i data-feather="plus-circle" class="plus-down-add"></i><span>
                                                                 Add
                                                                 New
                                                             </span>
-                                                        </a>
+                                                        </a> *@
                                                     </div>
-                                                    <select asp-for="Category.CategoryName" class="select">
-                                                        <option>Choose</option>
+                                                    <select id="categoryDropdown" asp-for="Category.CategoryName" class="select">
+                                                        @* <option>Choose</option>
                                                         <option>Lenovo</option>
-                                                        <option>Electronics</option>
+                                                        <option>Electronics</option> *@
                                                     </select>
                                                 </div>
                                             </div>
@@ -136,12 +136,12 @@
                                                 <div class="mb-3 add-product">
                                                     <div class="add-newplus">
                                                         <label class="form-label">Brand</label>
-                                                        <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#add-units-brand"><i data-feather="plus-circle" class="plus-down-add"></i><span>Add New</span></a>
+                                                        @* <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#add-units-brand"><i data-feather="plus-circle" class="plus-down-add"></i><span>Add New</span></a> *@
                                                     </div>
-                                                    <select asp-for="Brand" class="select">
-                                                        <option>Choose</option>
+                                                    <select id="brandDropdown" asp-for="Brand" class="select">
+                                                        @* <option>Choose</option>
                                                         <option>Nike</option>
-                                                        <option>Bolt</option>
+                                                        <option>Bolt</option> *@
                                                     </select>
                                                 </div>
                                             </div>
@@ -149,7 +149,7 @@
                                                 <div class="mb-3 add-product">
                                                     <div class="add-newplus">
                                                         <label class="form-label">Unit</label>
-                                                        <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#add-unit"><i data-feather="plus-circle" class="plus-down-add"></i><span>Add New</span></a>
+                                                        @* <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#add-unit"><i data-feather="plus-circle" class="plus-down-add"></i><span>Add New</span></a> *@
                                                     </div>
                                                     <select asp-for="Unit"class="select">
                                                         <option>Choose</option>
@@ -186,7 +186,7 @@
                                             <div class="input-blocks add-product list">
                                                 <label>Item Code</label>
                                                 <input type="text" class="form-control list" placeholder="Please Enter Item Code">
-                                                <button type="submit" class="btn btn-primaryadd">
+                                                <button type="button" class="btn btn-primaryadd">
                                                     Generate Code
                                                 </button>
                                             </div>
@@ -774,7 +774,7 @@
                                     <div class="input-blocks add-product list">
                                         <label>Item Code</label>
                                         <input type="text" class="form-control list" value="455454478844">
-                                        <button type="submit" class="btn btn-primaryadd">
+                                        <button type="button" class="btn btn-primaryadd">
                                             Generate Code
                                         </button>
                                     </div>
@@ -878,7 +878,7 @@
 </div>
 
 @section scripts {
-        <script>
+       @*  <script>
         var ctt = "";
         var DropStore = {
             init: function (ctt) {
@@ -895,7 +895,130 @@
                     });
             }
         }
-        </script>
+        </script> *@
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // AJAX request to the controller to get the categories
+            $.ajax({
+                url: '@Url.Action("GetWarehouseData", "Peoples")',
+                type: 'GET',
+                dataType: 'json',
+                success: function (warehouses) {
+                    
+                    console.log(warehouses.data);
+                    var dropdown = $('#warehouseDropdown');
+                    dropdown.empty(); // Clear any existing options
+
+                    // Append the default option
+                    dropdown.append('<option value="">--Choose--</option>');
+                
+                    // Loop through the categories and append to the dropdown                    
+
+                    $.each(warehouses.data, function (index, warehouse) {
+                        
+                        dropdown.append('<option value="' + warehouse.id + '">' + warehouse.name + '</option>');
+                    });
+                },
+                error: function (xhr, status, error) {
+                    alert('Error: ' + error);
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            // AJAX request to the controller to get the categories
+            $.ajax({
+                url: '@Url.Action("GetStoreData", "Peoples")',
+                type: 'GET',
+                dataType: 'json',
+                success: function (stores) {
+
+                    console.log(stores.data);
+                    var dropdown = $('#storeDropdown');
+                    dropdown.empty(); // Clear any existing options
+
+                    // Append the default option
+                    dropdown.append('<option value="">--Choose--</option>');
+
+                    // Loop through the categories and append to the dropdown
+
+                    $.each(stores.data, function (index, store) {
+
+                        dropdown.append('<option value="' + store.id + '">' + store.name + '</option>');
+                    });
+                },
+                error: function (xhr, status, error) {
+                    alert('Error: ' + error);
+                }
+            });
+        });
+        $(document).ready(function () {
+            // AJAX request to the controller to get the categories
+            $.ajax({
+                url: '@Url.Action("GetCategoryData", "InventoryManagement")',
+                type: 'GET',
+                dataType: 'json',
+                success: function (categories) {
+
+                    
+                    var dropdown = $('#categoryDropdown');
+                    dropdown.empty(); // Clear any existing options
+
+                    // Append the default option
+                    dropdown.append('<option value="">--Choose--</option>');
+
+                    // Loop through the categories and append to the dropdown
+
+                    $.each(categories.data, function (index, store) {
+
+                        dropdown.append('<option value="' + store.id + '">' + store.name + '</option>');
+                    });
+                },
+                error: function (xhr, status, error) {
+                    alert('Error: ' + error);
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            // AJAX request to the controller to get the categories
+            $.ajax({
+                url: '@Url.Action("GetBrandData", "InventoryManagement")',
+                type: 'GET',
+                dataType: 'json',
+                success: function (brands) {
+
+
+                    var dropdown = $('#brandDropdown');
+                    dropdown.empty(); // Clear any existing options
+
+                    // Append the default option
+                    dropdown.append('<option value="">--Choose--</option>');
+
+                    // Loop through the categories and append to the dropdown
+
+                    $.each(brands.data, function (index, brand) {
+
+                        dropdown.append('<option value="' + brand.id + '">' + brand.name + '</option>');
+                    });
+                },
+                error: function (xhr, status, error) {
+                    alert('Error: ' + error);
+                }
+            });
+        });
+        
+        $(document).ready(function () {
+            var counter = 600; // Starting code number
+
+            // Button click event to generate and display the code
+            $('#generateCode').click(function () {
+                counter++; // Increment the code number
+                $('#codeDisplay').val('SKU-' + counter); // Display the code (e.g., CODE-1001)
+            });
+        });
+    </script>
                 
             
 }

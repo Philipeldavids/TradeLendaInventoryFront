@@ -8,16 +8,18 @@ namespace TradeLendaInventory.Models
         [Key]
         public string ProductId { get; set; } = Guid.NewGuid().ToString();
 
+        [Required]
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
         public string Store { get; set; }
         public string Warehouse { get; set; }
 
-        public Category Category { get; set; } = new Category();
+        public Category? Category { get; set; } = new Category();
 
         public string CategoryId { get; set; }
 
-        public Brand Brand { get; set; }
+        public Brand? Brand { get; set; } = new Brand();
+        public string BrandId { get; set; }
 
         public string Barcode { get; set; }
         public decimal Price { get; set; }
@@ -39,8 +41,14 @@ namespace TradeLendaInventory.Models
 
     }
 
-    public enum Brand
-    {            
+    public class Brand
+    {
+        [Key]
+        public string BrandId { get; set; }
+        public string BrandName { get; set; }
+        public string? Logo { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public bool Status { get; set; }
     }
 
     public class Category

@@ -42,7 +42,7 @@ namespace TradeLendaInventory.Controllers
 
         [HttpGet]
 
-        public ActionResult AddProduct(int productid)
+        public ActionResult AddProduct()
         {
             return View();
         }
@@ -56,7 +56,7 @@ namespace TradeLendaInventory.Controllers
             {
                 return RedirectToAction("GetProductList", "InventoryManagement");
             }
-            return RedirectToAction("GetProductList", "InventoryManagement");
+            return RedirectToAction("AddProduct", "InventoryManagement");
         }
 
         [HttpGet]
@@ -149,6 +149,91 @@ namespace TradeLendaInventory.Controllers
             }
             return View();
         }
+        [HttpGet]
+
+        public async Task<IActionResult> GetBrand()
+        {
+
+            var result = await _httpClient.GetAsync(Constants.ClientRoutes.BrandGet);
+
+            if (result.IsSuccessStatusCode)
+            {
+                var res = await result.Content.ReadFromJsonAsync<List<Brand>>();
+                BrandViewModel viewModel = new BrandViewModel()
+                {
+                    brands = res
+                };
+                return View(viewModel);
+            }
+            return View();
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> AddBrand(Brand brand)
+        {
+            var result = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.ADDBRAND, brand);
+            if (result.IsSuccessStatusCode)
+            {
+                return RedirectToAction("GetBrand", "InventoryManagement");
+            }
+            return RedirectToAction("GetBrand", "InventoryManagement");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> DeleteBrand(string Id)
+        {
+            var result = await _httpClient.DeleteAsync(Constants.ClientRoutes.DeleteBrand + Id.ToString());
+
+            if (result.IsSuccessStatusCode)
+            {
+                return RedirectToAction("GetBrand", "InventoryManagement");
+            }
+            return RedirectToAction("GetBrand", "InventoryManagement");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetBrandData()
+        {
+            var result = await _httpClient.GetAsync(Constants.ClientRoutes.BrandGet);
+            if (result.IsSuccessStatusCode)
+            {
+                var res = await result.Content.ReadFromJsonAsync<List<Brand>>();
+
+                var resu = res.Select(c => new
+                {
+                    Id = c.BrandId,
+                    Name = c.BrandName
+                });
+                return Json(new
+                {
+                    data = resu
+                });
+            }
+            return Json("");
+        }
+            
+        
+        [HttpGet]
+        public async Task<IActionResult> GetCategoryData()
+        {
+            var result = await _httpClient.GetAsync(Constants.ClientRoutes.CategoryList);
+            if (result.IsSuccessStatusCode)
+            {
+                var res = await result.Content.ReadFromJsonAsync<List<Category>>();
+
+                var resu = res.Select(c => new
+                {
+                    Id = c.CategoryId,
+                    Name = c.CategoryName
+                });
+                return Json(new
+                {
+                    data = resu
+                });
+            }
+            return Json("");
+        }
         [HttpPost]
         public async Task<ActionResult> AddCategory(Category category)
         {
@@ -223,9 +308,6 @@ namespace TradeLendaInventory.Controllers
             return View();
         }
 
-        public IActionResult GetBrand() 
-        {
-            return View();
-        }
+      
     }
 }

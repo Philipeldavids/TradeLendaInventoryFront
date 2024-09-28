@@ -59,24 +59,68 @@ namespace TradeLendaInventory.Controllers
                 if (res.Data == true)
                 {
                     return RedirectToAction("GetCustomer", "Peoples");
-                } 
-               
+                }
+
             }
             return RedirectToAction("GetCustomer", "Peoples");
         }
 
 
+        [HttpGet]
+        public async Task<IActionResult> GetWarehouseData()
+        {
+            var result = await _httpClient.GetAsync(Constants.ClientRoutes.WarehouseGET);
+            if (result.IsSuccessStatusCode)
+            {
+                var res = await result.Content.ReadFromJsonAsync<List<Warehouse>>();
+
+                var resu = res.Select( c=> new
+                {
+                  Id = c.WarehouseId,
+                  Name = c.WarehouseName                  
+                });
+                return Json(new
+                {
+                    data = resu
+                });
+            }
+            return Json("");
+        }
+        
+        [HttpGet]
+
+        public async Task<IActionResult> GetStoreData()
+        {
+            var result = await _httpClient.GetAsync(Constants.ClientRoutes.StoreList);
+            if (result.IsSuccessStatusCode)
+            {
+                var res = await result.Content.ReadFromJsonAsync<List<Store>>();
+
+                var resu = res.Select(c => new
+                {
+                    Id = c.StoreId,
+                    Name = c.StoreName
+                });
+                return Json(new
+                {
+                    data = resu
+                });
+            }
+            return Json("");
+        }
+        
 
         [HttpGet]
         public async Task<IActionResult> GetWarehouse()
         {
-            var result = await _httpClient.GetAsync(Constants.ClientRoutes.WarehouseADD);
+            
+            var result = await _httpClient.GetAsync(Constants.ClientRoutes.WarehouseGET);
             if (result.IsSuccessStatusCode)
             {
-                var res = await result.Content.ReadFromJsonAsync<ServiceResponse<List<Warehouse>>>();
+                var res = await result.Content.ReadFromJsonAsync<List<Warehouse>>();
                 WarehouseViewModel viewModel = new WarehouseViewModel()
                 {
-                    Warehouses = res.Data
+                    Warehouses = res
                 };
                 return View(viewModel);
             }
@@ -88,6 +132,7 @@ namespace TradeLendaInventory.Controllers
 
         public async Task<ActionResult> AddWarehouse(Warehouse model)
         {
+           
             var result = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.WarehouseAdd, model);
             if (result.IsSuccessStatusCode)
             {
@@ -147,13 +192,24 @@ namespace TradeLendaInventory.Controllers
         {
             var result = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.StoreADD, store);
 
-            if(result.IsSuccessStatusCode)
+            if (result.IsSuccessStatusCode)
             {
                 return RedirectToAction("GetStore", "Peoples");
             }
             return RedirectToAction("GetStore", "Peoples");
         }
 
+        [HttpGet]
+
+        public async Task<IActionResult> DeleteStore (string Id)
+        {
+            var result = await _httpClient.DeleteAsync(Constants.ClientRoutes.DeleteStore + Id.ToString());
+            if (result.IsSuccessStatusCode)
+            {
+                return RedirectToAction("GetStore", "Peoples");
+            }
+            return RedirectToAction("GetStore", "Peoples");
+        }
     }
 }
 
