@@ -6,6 +6,7 @@ namespace TradeLendaInventory.Controllers
     {
         public IActionResult GetSalesReport()
         {
+
             return View();
         }
     }

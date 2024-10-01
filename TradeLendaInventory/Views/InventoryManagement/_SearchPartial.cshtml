@@ -1,0 +1,48 @@
+﻿@model TradeLendaInventory.Models.ViewModel.ProductViewModel
+@{
+}
+
+<div class="table-responsive">
+    <table class="table  datanew">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>SKU</th>
+                <th>Code</th>
+                <th>Qty</th>
+                <th class="text-center no-sort">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model.Products){
+                <tr>
+                    <td>
+                        <div class="productimgname">
+                            <a href="javascript:void(0);" class="product-img stock-img">
+                                <img src="assets/img/products/stock-img-02.png" alt="product">
+                            </a>
+                            <a href="javascript:void(0);">@item.</a>
+                        </div>
+                    </td>
+                    <td>PT002</td>
+                    <td>HG3FK</td>
+                    <td>
+                        <div class="product-quantity">
+                            <span class="quantity-btn"><i data-feather="minus-circle" class="feather-search"></i></span>
+                            <input type="text" class="quntity-input" value="4">
+                            <span class="quantity-btn">+<i data-feather="plus-circle" class="plus-circle"></i></span>
+                        </div>
+                    </td>
+                    <td class="action-table-data justify-content-center">
+                        <div class="edit-delete-action">
+                            <a class="confirm-text barcode-delete-icon" href="javascript:void(0);">
+                                <i data-feather="trash-2" class="feather-trash-2"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+           
+        </tbody>
+    </table>
+</div>

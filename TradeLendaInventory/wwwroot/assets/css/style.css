@@ -18637,7 +18637,7 @@ div#global-loader .whirly-loader:not(:required) {
     }
     .mini-sidebar .sidebar {
         width: 80px;
-        overflow: auto;
+        overflow: scroll;
     }
     .expand-menu .sidebar-right {
         display: block;
@@ -19520,7 +19520,7 @@ body.mini-sidebar.expand-menu .sidebar .sidebar-menu>ul>li.submenu-open ul li a 
 [data-layout-style=horizontal] .sidebar .sidebar-menu .nav>li>ul {
     max-height: 400px;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 [data-layout-style=horizontal] body.header-collapse .header {
@@ -23881,7 +23881,7 @@ body.mini-sidebar.expand-menu .sidebar .sidebar-menu>ul>li.submenu-open ul li a 
 
 .main-chat-blk .main-wrapper .content .sidebar-group .sidebar {
     background: #ffffff;
-    overflow: hidden;
+    overflow: scroll;
     width: 340px !important;
     display: flex;
     flex-direction: column;

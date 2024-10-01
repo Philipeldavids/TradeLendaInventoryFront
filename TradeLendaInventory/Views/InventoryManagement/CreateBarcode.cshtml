@@ -54,7 +54,7 @@
                         <div class="input-blocks search-form seacrh-barcode-item">
                             <div class="searchInput">
                                 <label class="form-label">Product</label>
-                                <input type="text" class="form-control" placeholder="Search Product by Codename">
+                                <input type="text" class="form-control" id="productCodeInput" placeholder="Search Product by Codename">
                                 <div class="resultBox">
                                 </div>
                                 <div class="icon"><i class="fas fa-search"></i></div>
@@ -65,7 +65,8 @@
             </form>
             <div class="col-lg-12">
                 <div class="modal-body-table search-modal-header">
-                    <div class="table-responsive">
+                    <div id="searchResults"></div>
+                    @* <div class="table-responsive">
                         <table class="table  datanew">
                             <thead>
                                 <tr>
@@ -130,7 +131,7 @@
                                     </td>
                                 </tr>
                             </tbody>
-                        </table>
+                        </table> *@
                     </div>
                 </div>
             </div>
@@ -237,7 +238,7 @@
                                     </p>
                                     <p>Price: $400</p>
                                     <div class="barscaner-img">
-                                        <img src="./assets/img/barcode/barcode-01.png" alt="Barcode" class="img-fluid">
+                                        <img src="~/assets/img/barcode/barcode-01.png" alt="Barcode" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -254,7 +255,7 @@
                                     </p>
                                     <p>Price: $300</p>
                                     <div class="barscaner-img">
-                                        <img src="./assets/img/barcode/barcode-02.png" alt="Barcode" class="img-fluid">
+                                        <img src="~/assets/img/barcode/barcode-02.jpg" alt="Barcode" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -266,7 +267,7 @@
                                     </p>
                                     <p>Price: $300</p>
                                     <div class="barscaner-img">
-                                        <img src="./assets/img/barcode/barcode-02.png" alt="Barcode" class="img-fluid">
+                                        <img src="~/assets/img/barcode/barcode-02.jpg" alt="Barcode" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -278,7 +279,7 @@
                                     </p>
                                     <p>Price: $300</p>
                                     <div class="barscaner-img">
-                                        <img src="./assets/img/barcode/barcode-02.png" alt="Barcode" class="img-fluid">
+                                        <img src="./assets/img/barcode/barcode-02.jpg" alt="Barcode" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -299,3 +300,42 @@
         </li>
     </ul>
 </div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#productCodeInput').on('input', function () {
+                var searchTerm = $(this).val().trim();
+
+                if (searchTerm.length > 0) {
+                    $.ajax({
+                        url: '/api/InventoryManagement/GetSearch',
+                        method: 'POST',
+                        data: { code: searchTerm },
+                        success: function (html) {
+
+                            $("#searchResults").html(html);
+                           // $('#searchResults').empty(); // Clear previous results
+                        }
+                        error: function () {
+                                alert("Error loading tab content!");
+                            }
+                //             if (products.length > 0) {
+                //                 $.each(products, function (index, product) {
+                //                     $('#searchResults').append('<div>' + product.name + '</div>');
+                //                 });
+                //             } else {
+                //                 $('#searchResults').text('No products found.');
+                //             }
+                //         },
+                //         error: function () {
+                //             $('#searchResults').text('Error fetching products.');
+                //         }
+                    });
+                } else {
+                    $('#searchResults').empty(); // Clear results if input is empty
+                }
+            });
+        });
+    </script>
+}

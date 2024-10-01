@@ -25,6 +25,7 @@
             public const string BrandGet = "api/InventoryManagement/GetBrand";
             public const string ADDBRAND = "api/InventoryManagement/AddBRAND";
             public const string DeleteBrand = "api/inventorymanagement/DeleteBrand/";
+            public const string GETBARCODE = "api/InventoryManagement/barcode";
 
             public const string CustomerAdd =  "api/Peoples/AddCustomer";
             public const string CustomerList = "api/Peoples/GetCustomer";
@@ -39,8 +40,10 @@
 
             public const string StockList = "api/Stock/get-stock-list";
             public const string StockAdd = "api/Stock/add-new-stock";
-            public const string PurchaseADD = "api/Purchase/GetPurchaseListAsync";
+            public const string PurchaseGET = "api/Purchase/GetPurchaseList";
 
+            public const string GetSalesReport = "api/ReportingAndAnalytics/GetSalesReport";
+            public const string GetPurchaseReport = "api/ReportingAndAnalytics/GetPurchaseReport";  
             public const string GetUser = "api/UserManagement/GetUsers";
             public const string AddUser = "api/UserManagement/AddUser";
 

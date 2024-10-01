@@ -45,7 +45,7 @@ namespace TradeLendaInventory.Models
     {
         [Key]
         public string BrandId { get; set; }
-        public string BrandName { get; set; }
+        public string? BrandName { get; set; }
         public string? Logo { get; set; }
         public DateTime CreatedOn { get; set; }
         public bool Status { get; set; }

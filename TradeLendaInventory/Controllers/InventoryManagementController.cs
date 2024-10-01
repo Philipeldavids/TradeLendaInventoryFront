@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using NuGet.Common;
+﻿using NuGet.Common;
 using System.Collections;
 using System.Drawing.Printing;
 using System.Net.Http.Headers;
@@ -8,6 +7,7 @@ using System.Reflection.Metadata;
 using TradeLendaInventory.Models;
 using TradeLendaInventory.Models.ViewModel;
 using TradeLendaInventory.Utility;
+using Microsoft.AspNetCore.Mvc;
 
 namespace TradeLendaInventory.Controllers
 {
@@ -130,6 +130,26 @@ namespace TradeLendaInventory.Controllers
                 return PartialView("_SlidePartial", model);
             }
             return PartialView("_SlidePartial");
+        }
+
+        [HttpPost]
+        public async Task<PartialViewResult> GetSearch(string code)
+        {
+            var products = await _httpClient.GetAsync(Constants.ClientRoutes.Productlist);
+            if (products.IsSuccessStatusCode)
+            {
+                var res = await products.Content.ReadFromJsonAsync<List<Product>>();
+                var filtered = res.Where(x => x.SKU.Contains(code)).Select(
+                       c => new
+                       {
+                           Id = c.ProductId,
+                           Name = c.ProductName,                           
+                           Unit = c.SKU,
+                          
+                       }).ToList();
+                return PartialView("_SearchPartial1", filtered);
+            }
+            return PartialView("_SearchPartial1");
         }
         [HttpGet]
         public async Task<ActionResult> GetCategory() 
@@ -303,11 +323,25 @@ namespace TradeLendaInventory.Controllers
             }
             return RedirectToAction("GetCategory", "InventoryManagement");
         }
-        public IActionResult CreateBarcode() 
-        { 
+
+        [HttpGet]
+        public async Task<ActionResult> CreateBarcode(string code)
+        {
+            HttpResponseMessage response = await _httpClient.GetAsync(Constants.ClientRoutes.GETBARCODE);
+
+            if (response.IsSuccessStatusCode)
+            {
+                // Read the image data from the response
+                var imageBytes = await response.Content.ReadAsByteArrayAsync();
+
+                // Return the image as a FileResult to be displayed in the front-end
+                return File(imageBytes, "image/png");
+            }
+
             return View();
         }
+    }
 
       
-    }
+    
 }

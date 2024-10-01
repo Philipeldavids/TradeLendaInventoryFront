@@ -130,10 +130,10 @@ namespace TradeLendaInventory.Controllers
 
         [HttpPost]
 
-        public async Task<ActionResult> AddWarehouse(Warehouse model)
+        public async Task<ActionResult> AddWarehouse(WarehouseModel warehouse)
         {
            
-            var result = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.WarehouseAdd, model);
+            var result = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.WarehouseAdd, warehouse);
             if (result.IsSuccessStatusCode)
             {
                 return RedirectToAction("GetWarehouse", "Peoples");
@@ -177,10 +177,10 @@ namespace TradeLendaInventory.Controllers
             {
                 if (resut.IsSuccessStatusCode)
                 {
-                    var res = await resut.Content.ReadFromJsonAsync<ServiceResponse<List<Store>>>();
+                    var res = await resut.Content.ReadFromJsonAsync<List<Store>>();
                     StoreViewModel viewModel = new StoreViewModel()
                     {
-                        Stores = res.Data
+                        Stores = res
                     };
                     return View(viewModel);
                 }
