@@ -31,8 +31,18 @@ namespace TradeLendaInventory.Controllers
             return View();
         }
 
-        public IActionResult GetPurchaseOrderReport()
+        public async Task<IActionResult> GetPurchaseOrderReport()
         {
+            var result = await _httpClient.GetAsync(Constants.ClientRoutes.GetPurchaseReport);
+            if (result.IsSuccessStatusCode)
+            {
+                var res = await  result.Content.ReadFromJsonAsync<List<PurchaseReport>>();
+                PurchaseReportViewModel purchaseReportView = new PurchaseReportViewModel()
+                {
+                    PurchaseReports = res
+                };
+                return View(purchaseReportView);
+            }
             return View();
         }
 

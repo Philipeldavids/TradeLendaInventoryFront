@@ -64,8 +64,32 @@ namespace TradeLendaInventory.Controllers
             return View();
         }
 
-        public IActionResult StockTransfer()
+        [HttpPost]
+
+        public async Task<IActionResult> ADdStockTransfer(StockTransfer stockTransfer)
         {
+            var result = await  _httpClient.PostAsJsonAsync(Constants.ClientRoutes.StockTransfer, stockTransfer);
+            if (result.IsSuccessStatusCode)
+            {
+                return RedirectToAction("StockTransfer", "Stock");
+            }
+            return RedirectToAction("StockTransfer", "Stock");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> StockTransfer()
+        {
+            var result = await _httpClient.GetAsync(Constants.ClientRoutes.GEtStockTransfer);
+            if (result.IsSuccessStatusCode)
+            {
+                var res = await result.Content.ReadFromJsonAsync<List<StockTransfer>>();
+
+                StockTransferViewModel stockTransferView = new StockTransferViewModel()
+                {
+                    StockTransferList = res
+                };
+                return View(stockTransferView);
+            }
             return View();
         }
     }

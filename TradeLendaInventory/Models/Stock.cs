@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ApplicationModels;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace TradeLendaInventory.Models
@@ -32,6 +33,11 @@ namespace TradeLendaInventory.Models
     {
         public string StockTransferId { get; set; } = Guid.NewGuid().ToString();
         public int QuantityTransferred { get; set; }
+
+        public List<Product> ProductMoved { get; set; } = new List<Product>();
+
+        public string? Notes { get; set; }
+        public string? RefNumber { get; set; }
         public DateTime TransferDate { get; set; }
         public Warehouse FromWarehouse { get; set; }
         public Warehouse ToWarehouse { get; set; }

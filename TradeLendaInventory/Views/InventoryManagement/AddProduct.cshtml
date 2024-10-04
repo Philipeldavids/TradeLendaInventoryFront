@@ -1,4 +1,4 @@
-﻿@model Product
+﻿@model ProductModel
 @{
     ViewData["Title"] = "AddProduct Page";
     Layout = "~/Views/Shared/_Layout2.cshtml";
@@ -74,7 +74,7 @@
                                         <div class="col-lg-4 col-sm-6 col-12">
                                             <div class="mb-3 add-product">
                                                 <label class="form-label">Slug</label>
-                                                <input asp-for="Category.CategorySLug" type="text" class="form-control" readonly>
+                                                <input asp-for="CategorySlug" type="text" class="form-control" readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-6 col-12">
@@ -100,7 +100,7 @@
                                                             </span>
                                                         </a> *@
                                                     </div>
-                                                    <select id="categoryDropdown" asp-for="Category.CategoryName" class="select">
+                                                    <select id="categoryDropdown" asp-for="Category" class="select">
                                                         @* <option>Choose</option>
                                                         <option>Lenovo</option>
                                                         <option>Electronics</option> *@
@@ -185,7 +185,7 @@
                                         <div class="col-lg-6 col-sm-6 col-12">
                                             <div class="input-blocks add-product list">
                                                 <label>Item Code</label>
-                                                <input type="text" class="form-control list" placeholder="Please Enter Item Code">
+                                                <input type="text" class="form-control list" placeholder="Please Enter Item Code" readonly>
                                                 <button type="button" class="btn btn-primaryadd">
                                                     Generate Code
                                                 </button>
@@ -222,7 +222,7 @@
                                     <div class="input-blocks add-products">
                                         <label class="d-block">Product Type</label>
                                         <div class="single-pill-product">
-                                            <ul class="nav nav-pills" id="pills-tab1" role="tablist">
+                                           @*  <ul class="nav nav-pills" id="pills-tab1" role="tablist">
                                                 <li class="nav-item" role="presentation">
                                                     <span class="custom_radio me-4 mb-0 active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
                                                         <input type="radio" class="form-control" name="payment">
@@ -235,7 +235,7 @@
                                                         <span class="checkmark"></span> Variable Product
                                                     </span>
                                                 </li>
-                                            </ul>
+                                            </ul> *@
                                         </div>
                                     </div>
                                     <div class="tab-content" id="pills-tabContent">
@@ -250,21 +250,28 @@
                                                 <div class="col-lg-4 col-sm-6 col-12">
                                                     <div class="input-blocks add-product">
                                                         <label>Price</label>
-                                                        <input type="text" class="form-control">
+                                                        <input asp-for="Price" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-sm-6 col-12">
                                                     <div class="input-blocks add-product">
+                                                        <label>Unit Cost</label>
+                                                        <input asp-for="UnitCost" type="text" class="form-control">
+                                                    </div>
+                                               </div>
+                                            </div>
+                                                <div class="col-lg-4 col-sm-6 col-12">
+                                                    @* <div class="input-blocks add-product">
                                                         <label>Tax Type</label>
                                                         <select class="select">
                                                             <option>Exclusive</option>
                                                             <option>Sales Tax</option>
-                                                        </select>
-                                                    </div>
+                                                        </select> *@
+                                                    
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-lg-4 col-sm-6 col-12">
+                                                @* <div class="col-lg-4 col-sm-6 col-12">
                                                     <div class="input-blocks add-product">
                                                         <label>Discount Type</label>
                                                         <select class="select">
@@ -286,7 +293,7 @@
                                                         <input type="text" class="form-control" readonly>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> *@
                                             <div class="accordion-card-one accordion" id="accordionExample3">
                                                 <div class="accordion-item">
                                                     <div class="accordion-header" id="headingThree">
@@ -312,11 +319,11 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="phone-img">
-                                                                            <img src="assets/img/products/phone-add-2.png" alt="image">
+                                                                            <img src="~/assets/img/products/phone-add-2.png" alt="image">
                                                                             <a href="javascript:void(0);"><i data-feather="x" class="x-square-add remove-product"></i></a>
                                                                         </div>
                                                                         <div class="phone-img">
-                                                                            <img src="assets/img/products/phone-add-1.png" alt="image">
+                                                                            <img src="~/assets/img/products/phone-add-1.png" alt="image">
                                                                             <a href="javascript:void(0);"><i data-feather="x" class="x-square-add remove-product"></i></a>
                                                                         </div>
                                                                     </div>
@@ -327,7 +334,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                        @* <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                                             <div class="row select-color-add">
                                                 <div class="col-lg-6 col-sm-6 col-12">
                                                     <div class="input-blocks add-product">
@@ -470,9 +477,9 @@
                                                             </tr>
                                                         </tbody>
                                                     </table>
-                                                </div>
+                                                </div> 
                                             </div>
-                                        </div>
+                                        </div>*@
                                     </div>
                                 </div>
                             </div>
@@ -525,7 +532,7 @@
                                             <div class="col-lg-4 col-sm-6 col-12">
                                                 <div class="input-blocks add-product">
                                                     <label>Quantity Alert</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" readonly>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-12">
@@ -533,7 +540,7 @@
                                                     <label>Manufactured Date</label>
                                                     <div class="input-groupicon calender-input">
                                                         <i data-feather="calendar" class="info-img"></i>
-                                                        <input type="text" class="datetimepicker" placeholder="Choose Date">
+                                                        <input asp-for="ManufacturedDate" type="date" class="datetimepicker" placeholder="Choose Date">
                                                     </div>
                                                 </div>
                                             </div>
@@ -542,7 +549,7 @@
                                                     <label>Expiry On</label>
                                                     <div class="input-groupicon calender-input">
                                                         <i data-feather="calendar" class="info-img"></i>
-                                                        <input type="text" class="datetimepicker" placeholder="Choose Date">
+                                                        <input type="date" asp-for="ExpiredDate" class="datetimepicker" placeholder="Choose Date">
                                                     </div>
                                                 </div>
                                             </div>
@@ -970,9 +977,9 @@
 
                     // Loop through the categories and append to the dropdown
 
-                    $.each(categories.data, function (index, store) {
+                    $.each(categories.data, function (index, category) {
 
-                        dropdown.append('<option value="' + store.id + '">' + store.name + '</option>');
+                        dropdown.append('<option value="' + category.id + '">' + category.name + '</option>');
                     });
                 },
                 error: function (xhr, status, error) {

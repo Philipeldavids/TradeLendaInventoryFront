@@ -89,7 +89,7 @@
                                         <span class="checkmarks"></span>
                                     </label>
                                 </th>
-                                <th>Product Name</th>
+                                @* <th>Product Name</th> *@
                                 <th>Purchase Amount</th>
                                 <th>Purchase Qty</th>
                                 <th>Instock Qty</th>
@@ -99,7 +99,7 @@
                             @foreach(var item in Model.PurchaseReports)
                             {
                                 <tr>
-                                    <td>
+                                    @* <td>
                                         <label class="checkboxs">
                                             <input type="checkbox">
                                             <span class="checkmarks"></span>
@@ -111,8 +111,8 @@
                                                 <img src="assets/img/products/stock-img-01.png" alt="product">
                                             </a>
                                         </div>
-                                        <a href="javascript:void(0);">@item.Product.ProductName</a>
-                                    </td>
+                                        <a href="javascript:void(0);">@item.Product</a>
+                                    </td> *@
                                     <td>@item.PurchaseAmount</td>
                                     <td>@item.PurchaseQuatity</td>
                                     <td>@item.InstockQty</td>

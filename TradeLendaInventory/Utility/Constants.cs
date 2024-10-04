@@ -40,10 +40,14 @@
 
             public const string StockList = "api/Stock/get-stock-list";
             public const string StockAdd = "api/Stock/add-new-stock";
+
+            public const string GEtStockTransfer = "api/Stock/get-stock-transfer-list";
+            public const string StockTransfer = "api/Stock/stock-transfer"; 
             public const string PurchaseGET = "api/Purchase/GetPurchaseList";
 
             public const string GetSalesReport = "api/ReportingAndAnalytics/GetSalesReport";
-            public const string GetPurchaseReport = "api/ReportingAndAnalytics/GetPurchaseReport";  
+            public const string GetPurchaseReport = "api/Purchase/GetPurchaseOrderReport";
+            
             public const string GetUser = "api/UserManagement/GetUsers";
             public const string AddUser = "api/UserManagement/AddUser";
 

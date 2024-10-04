@@ -48,7 +48,7 @@ namespace TradeLendaInventory.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> SaveProduct(Product product)
+        public async Task<ActionResult> SaveProduct(ProductModel product)
         {
             var result = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.ProductADD, product);
 
@@ -145,7 +145,7 @@ namespace TradeLendaInventory.Controllers
                            Id = c.ProductId,
                            Name = c.ProductName,                           
                            Unit = c.SKU,
-                          
+                        
                        }).ToList();
                 return PartialView("_SearchPartial1", filtered);
             }
