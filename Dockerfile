@@ -9,7 +9,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Debug
 WORKDIR /src
-COPY ["TradeLendaInventory.csproj", "TradeLendaInventory/"]
+COPY ["TradeLendaInventory/TradeLendaInventory.csproj", "TradeLendaInventory/"]
 RUN dotnet restore "./TradeLendaInventory/TradeLendaInventory.csproj"
 WORKDIR "/src/TradeLendaInventory"
 COPY . .
