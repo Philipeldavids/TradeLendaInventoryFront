@@ -42,10 +42,10 @@ namespace TradeLendaInventory.Controllers
                 var refreshToken = serialize.RefreshToken;
                 var roles = serialize.User.Role.ToString();
 
-               
-               ViewBag.Username = serialize.User.UserName;
-                ViewBag.Role = serialize.User.Role.ToString();
-               ViewBag.IsActive= serialize.User.IsActive;
+
+                TempData["UserName"] = serialize.User.UserName;
+                TempData["Role"] = serialize.User.Role.ToString();
+                TempData["IsActive"] = serialize.User.IsActive;
 
 
 

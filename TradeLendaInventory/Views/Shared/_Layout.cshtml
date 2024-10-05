@@ -1,22 +1,22 @@
 ﻿@using System.Security.Claims
 @{
 
-    var userrole = ViewBag.Role;
-    var username = ViewBag.Username;
+    var userrole = "";
+    var username = "";
     bool isactive = false;
 
-    // if(TempData["UserName"] != null)
-    // {
-    //     username = TempData["UserName"].ToString();
-    // }
+    if(TempData["UserName"] != null)
+    {
+        username = TempData["UserName"].ToString();
+    }
 
-    // if(TempData["Role"] != null)
-    // {
-    //      userrole = TempData["Role"].ToString();
-    // }
-    //  if(Convert.ToBoolean(TempData["IsActive"])){
-    //     IsActive = true;
-    // }
+    if(TempData["Role"] != null)
+    {
+         userrole = TempData["Role"].ToString();
+    }
+     if(Convert.ToBoolean(TempData["IsActive"])){
+        isactive = true;
+    }
     
 }
 <!DOCTYPE html>
@@ -326,10 +326,10 @@
                                 <img src="~/assets/img/profiles/avator1.jpg" alt class="img-fluid">
                             </span>
                             <span class="user-detail">
-                                @if (ViewBag.Username != null && ViewBag.Role != null)
+                                @if (username != null && userrole != null)
                                 {
-                                    <span class="user-name">@ViewBag.Username </span>
-                                    <span class="user-role">@ViewBag.Role</span>
+                                    <span class="user-name">@username </span>
+                                    <span class="user-role">@userrole</span>
                                 }
                                 
                             </span>
@@ -343,11 +343,11 @@
                                     <span class="status online"></span>
                                 </span>
 
-                                @if (@ViewBag.Username != null && @ViewBag.Role != null)
+                                @if (username != null && userrole != null)
                                     {
                                         <div class="profilesets">
-                                        <h6>@ViewBag.Username </h6>
-                                        <h5>@ViewBag.Role</h5>
+                                        <h6>@username </h6>
+                                        <h5>@userrole</h5>
                                          </div>
                                     }
                                
@@ -696,7 +696,7 @@
                                     </ul>
                                 </li> *@
                                 <li>
-                                    <a href="signin.html"><i data-feather="log-out"></i><span>Logout</span> </a>
+                                    <a asp-controller="Auth" asp-action="SignIn">><i data-feather="log-out"></i><span>Logout</span> </a>
                                 </li>
                             </ul>
                         </li>

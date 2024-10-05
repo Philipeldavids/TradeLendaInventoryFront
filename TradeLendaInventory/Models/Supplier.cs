@@ -4,7 +4,8 @@ namespace TradeLendaInventory.Models
 {
     public class Supplier
     {
-       
+       public string SupplierID { get; set; }
+
         [Required]
         public string Name { get; set; }
         [Required]

@@ -37,6 +37,7 @@
             public const string StoreList = "api/Peoples/GetStore";
             public const string StoreADD = "api/Peoples/AddStore";
             public const string DeleteStore = "api/Peoples/DeleteStore/";
+            public const string DeleteSupplier = "api/Peoples/DeleteSupplier/";
 
             public const string StockList = "api/Stock/get-stock-list";
             public const string StockAdd = "api/Stock/add-new-stock";

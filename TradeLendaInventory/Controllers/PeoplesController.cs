@@ -171,6 +171,17 @@ namespace TradeLendaInventory.Controllers
             return RedirectToAction("GetSupplier", "Peoples");
         }
         [HttpGet]
+        public async Task<IActionResult> DeleteSupplier(string id)
+        {
+            var result = await _httpClient.DeleteAsync(Constants.ClientRoutes.DeleteSupplier + id.ToString());
+            if(result.IsSuccessStatusCode)
+            {
+                return RedirectToAction("GetSupplier", "Peoples");
+            }
+            return RedirectToAction("GetSupplier", "Peoples");
+        }
+
+        [HttpGet]
         public async Task<IActionResult> GetStore()
         {
             var resut = await _httpClient.GetAsync(Constants.ClientRoutes.StoreList);
