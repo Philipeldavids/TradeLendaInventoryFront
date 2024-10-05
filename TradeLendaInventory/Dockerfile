@@ -7,16 +7,16 @@ EXPOSE 8080
 EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Debug
+ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["./TradeLendaInventory/TradeLendaInventory.csproj", "TradeLendaInventory/"]
+COPY ["TradeLendaInventory/TradeLendaInventory.csproj", "TradeLendaInventory/"]
 RUN dotnet restore "./TradeLendaInventory/TradeLendaInventory.csproj"
-WORKDIR "/src/TradeLendaInventory"
 COPY . .
+WORKDIR "/src/TradeLendaInventory"
 RUN dotnet build "./TradeLendaInventory.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
-ARG BUILD_CONFIGURATION=Debug
+ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "./TradeLendaInventory.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
