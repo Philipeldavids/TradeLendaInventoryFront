@@ -8,7 +8,7 @@ namespace TradeLendaInventory.Models
     public class User : IdentityUser 
     {
         [Key]
-        public string UserId { get; set; } = Guid.NewGuid().ToString();
+        public string UserId { get; set; } 
 
         [Required, EmailAddress, MaxLength(100)]
         public string Email { get; set; }
