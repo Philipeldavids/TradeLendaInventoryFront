@@ -2,10 +2,8 @@
 
 namespace TradeLendaInventory.Models
 {
-    public class Supplier
+    public class SupplierModel
     {
-       public string SupplierID { get; set; }
-
         [Required]
         public string Name { get; set; }
         [Required]
@@ -18,4 +16,3 @@ namespace TradeLendaInventory.Models
         public string? Description { get; set; }
     }
 }
-

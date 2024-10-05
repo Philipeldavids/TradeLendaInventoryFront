@@ -3,6 +3,6 @@
     public class StoreViewModel
     {
         public List<Store> Stores { get; set; } = new List<Store>();
-        public Store store { get; set; } = new Store();
+        public StoreModel store { get; set; } = new StoreModel();
     }
 }

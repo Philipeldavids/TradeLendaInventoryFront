@@ -37,7 +37,7 @@ namespace TradeLendaInventory.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddCustomer(Customer customer)
+        public async Task<ActionResult> AddCustomer(CustomerModel customer)
         {
 
             var result = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.CustomerAdd, customer);
@@ -158,7 +158,7 @@ namespace TradeLendaInventory.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> AddSupplier(Supplier supplier)
+        public async Task<IActionResult> AddSupplier(SupplierModel supplier)
         {
             var result = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.SupplierADD, supplier);
 
@@ -199,7 +199,7 @@ namespace TradeLendaInventory.Controllers
             }
         }
 
-        public async Task<IActionResult> AddStore(Store store)
+        public async Task<IActionResult> AddStore(StoreModel store)
         {
             var result = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.StoreADD, store);
 
