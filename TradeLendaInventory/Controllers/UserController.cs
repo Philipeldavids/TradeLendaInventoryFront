@@ -44,9 +44,16 @@ namespace TradeLendaInventory.Controllers
             return View();
         }
 
-        public IActionResult DeleteUser()
+        [HttpGet]
+        public async  Task<IActionResult> DeleteUser(string Id)
         {
-            return View();
+            var reslt = await _httpClient.DeleteAsync(Constants.ClientRoutes.DeleteUser + Id.ToString());
+
+            if (reslt.IsSuccessStatusCode)
+            {
+                return RedirectToAction("GetUser", "User");
+            }
+            return RedirectToAction("GetUser", "User");
         }
         [HttpGet]
         public async Task<ActionResult> GetUser()

@@ -7,6 +7,7 @@
         {
             public const string Token = "api/usermanagement/authenticate";
             public const string Register = "api/usermanagement/register";
+            public const string DeleteUser = "api/usermanagement/DeleteUser/";
 
             public const string Productlist = "api/inventorymanagement/GetProducts";
             public const string DeleteProduct = "api/inventoryManagement/DeleteProduct/";

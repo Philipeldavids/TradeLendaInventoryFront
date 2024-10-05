@@ -146,7 +146,7 @@
                                     <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b1c5d9dedcd0c2f1d4c9d0dcc1ddd49fd2dedc">@item.Email</a></td>
                                     <td>@item.Role.ToString()</td>
                                     <td>@item.CreatedAt</td>
-                                    <td><span class="badge badge-linedanger">@item.IsActive? "Active" : "Inactive"</span></td>
+                                    <td><span class="badge badge-linedanger">@item.IsActive</span></td>
                                     <td class="action-table-data">
                                         <div class="edit-delete-action">
                                             <a class="me-2 p-2 mb-0" href="javascript:void(0);">
@@ -155,7 +155,7 @@
                                             <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units">
                                                 <i data-feather="edit" class="feather-edit"></i>
                                             </a>
-                                            <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);">
+                                            <a class="me-2 p-2 mb-0" asp-controller="User" asp-action="DeleteUser" asp-route-id="@item.UserId" onclick="return confirm('Are you sure you want to delete this?')">
                                                 <i data-feather="trash-2" class="feather-trash-2"></i>
                                             </a>
                                         </div>
