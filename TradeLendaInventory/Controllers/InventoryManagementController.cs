@@ -140,12 +140,35 @@ namespace TradeLendaInventory.Controllers
             {
                 var res = await products.Content.ReadFromJsonAsync<ServiceResponse<PaginationModel<IEnumerable<Product>>>>();
                 var filtered = res.Data.PageItems.Where(x => x.SKU.Contains(code));
+                
                 ProductViewModel viewModel = new ProductViewModel()
                 {
                     Products = filtered
                 };
+                ProductModel model = new ProductModel();
+                foreach (var item in viewModel.Products) 
+                {
+                    model.Barcode = item.Barcode;
+                    model.SKU = item.SKU;
+                    model.ProductName = item.ProductName;
+                    model.ProductDescription = item.ProductDescription;
+                    model.ManufacturedDate = item.ManufacturedDate;
+                    model.ExpiredDate = item.ExpiredDate;
+                    model.Brand = item.Brand.BrandName;
+                    model.Category = item.Category.CategoryName;
+                    model.Quantity = item.Quantity;
+                    model.Warehouse = item.Warehouse;
+                    model.Store = item.Store;
+                    model.CategorySlug = item.Category.CategorySLug;
+                    model.Price = item.Price;
+                    model.Unit = item.Unit;
+                    model.UnitCost = item.UnitCost;                    
 
-                return PartialView("_SearchPartial", viewModel);
+                }
+                BarcodeViewModel barcodeViewModel = new BarcodeViewModel();
+                barcodeViewModel.product = model;
+                barcodeViewModel.productView = viewModel;
+                return PartialView("_SearchPartial", barcodeViewModel);
             }
             return PartialView("_SearchPartial");
         }
