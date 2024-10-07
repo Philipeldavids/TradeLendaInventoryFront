@@ -22,7 +22,7 @@
 
         public string? ProductImageUrl { get; set; }
         public decimal UnitCost { get; set; }
-        public DateTime ManufacturedDate { get; set; }
-        public DateTime ExpiredDate { get; set; }
+        public DateTimeOffset ManufacturedDate { get; set; }
+        public DateTimeOffset ExpiredDate { get; set; }
     }
 }

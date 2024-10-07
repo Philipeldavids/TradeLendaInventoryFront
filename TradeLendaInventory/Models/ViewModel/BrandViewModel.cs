@@ -4,7 +4,7 @@
     {
         public List<Brand> brands { get; set; } = new List<Brand>();
 
-        public Brand brand { get; set; } = new Brand();
+        public BrandDTO brand { get; set; } = new BrandDTO();
 
     }
 }

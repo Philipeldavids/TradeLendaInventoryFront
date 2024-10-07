@@ -44,7 +44,7 @@ namespace TradeLendaInventory.Controllers
 
         public ActionResult AddProduct()
         {
-            return View();
+           return View();
         }
 
         [HttpPost]
@@ -188,7 +188,7 @@ namespace TradeLendaInventory.Controllers
 
         [HttpPost]
 
-        public async Task<IActionResult> AddBrand(Brand brand)
+        public async Task<IActionResult> AddBrand(BrandDTO brand)
         {
             var result = await _httpClient.PostAsJsonAsync(Constants.ClientRoutes.ADDBRAND, brand);
             if (result.IsSuccessStatusCode)
