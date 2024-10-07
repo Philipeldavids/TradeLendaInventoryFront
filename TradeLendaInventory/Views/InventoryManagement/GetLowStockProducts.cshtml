@@ -436,8 +436,12 @@
             loadTabContent(1);
 
             // Event listener for tab buttons
-            $(".nav-link").click(function () {                            
-                var tabNumber = $(this).data("tab");                            
+            $(".nav-link").click(function () {
+                
+                var tabNumber = $(this).data("tab");
+                $('.nav-link').removeClass('active');
+                $(this).addClass("active");
+                //$(this).removeClass("active");
                 loadTabContent(tabNumber);
             });
         });

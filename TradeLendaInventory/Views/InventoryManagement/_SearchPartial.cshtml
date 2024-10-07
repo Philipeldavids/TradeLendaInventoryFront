@@ -7,8 +7,7 @@
         <thead>
             <tr>
                 <th>Product</th>
-                <th>SKU</th>
-                <th>Code</th>
+                <th>SKU</th>                
                 <th>Qty</th>
                 <th class="text-center no-sort">Action</th>
             </tr>
@@ -21,11 +20,11 @@
                             <a href="javascript:void(0);" class="product-img stock-img">
                                 <img src="assets/img/products/stock-img-02.png" alt="product">
                             </a>
-                            <a href="javascript:void(0);">@item.</a>
+                            <a href="javascript:void(0);">@item.ProductName</a>
                         </div>
                     </td>
-                    <td>PT002</td>
-                    <td>HG3FK</td>
+                    <td>@item.SKU</td>
+                    
                     <td>
                         <div class="product-quantity">
                             <span class="quantity-btn"><i data-feather="minus-circle" class="feather-search"></i></span>

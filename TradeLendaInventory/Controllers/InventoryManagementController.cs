@@ -138,18 +138,16 @@ namespace TradeLendaInventory.Controllers
             var products = await _httpClient.GetAsync(Constants.ClientRoutes.Productlist);
             if (products.IsSuccessStatusCode)
             {
-                var res = await products.Content.ReadFromJsonAsync<List<Product>>();
-                var filtered = res.Where(x => x.SKU.Contains(code)).Select(
-                       c => new
-                       {
-                           Id = c.ProductId,
-                           Name = c.ProductName,                           
-                           Unit = c.SKU,
-                        
-                       }).ToList();
-                return PartialView("_SearchPartial1", filtered);
+                var res = await products.Content.ReadFromJsonAsync<ServiceResponse<PaginationModel<IEnumerable<Product>>>>();
+                var filtered = res.Data.PageItems.Where(x => x.SKU.Contains(code));
+                ProductViewModel viewModel = new ProductViewModel()
+                {
+                    Products = filtered
+                };
+
+                return PartialView("_SearchPartial", viewModel);
             }
-            return PartialView("_SearchPartial1");
+            return PartialView("_SearchPartial");
         }
         [HttpGet]
         public async Task<ActionResult> GetCategory() 

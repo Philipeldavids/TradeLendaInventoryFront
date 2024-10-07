@@ -66,72 +66,9 @@
             <div class="col-lg-12">
                 <div class="modal-body-table search-modal-header">
                     <div id="searchResults"></div>
-                    @* <div class="table-responsive">
-                        <table class="table  datanew">
-                            <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>SKU</th>
-                                    <th>Code</th>
-                                    <th>Qty</th>
-                                    <th class="text-center no-sort">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="productimgname">
-                                            <a href="javascript:void(0);" class="product-img stock-img">
-                                                <img src="assets/img/products/stock-img-02.png" alt="product">
-                                            </a>
-                                            <a href="javascript:void(0);">Nike Jordan</a>
-                                        </div>
-                                    </td>
-                                    <td>PT002</td>
-                                    <td>HG3FK</td>
-                                    <td>
-                                        <div class="product-quantity">
-                                            <span class="quantity-btn"><i data-feather="minus-circle" class="feather-search"></i></span>
-                                            <input type="text" class="quntity-input" value="4">
-                                            <span class="quantity-btn">+<i data-feather="plus-circle" class="plus-circle"></i></span>
-                                        </div>
-                                    </td>
-                                    <td class="action-table-data justify-content-center">
-                                        <div class="edit-delete-action">
-                                            <a class="confirm-text barcode-delete-icon" href="javascript:void(0);">
-                                                <i data-feather="trash-2" class="feather-trash-2"></i>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="productimgname">
-                                            <a href="javascript:void(0);" class="product-img stock-img">
-                                                <img src="assets/img/products/stock-img-03.png" alt="product">
-                                            </a>
-                                            <a href="javascript:void(0);">Apple Series 5 Watch</a>
-                                        </div>
-                                    </td>
-                                    <td>PT003</td>
-                                    <td>TEUIU7</td>
-                                    <td>
-                                        <div class="product-quantity">
-                                            <span class="quantity-btn"><i data-feather="minus-circle" class="feather-search"></i></span>
-                                            <input type="text" class="quntity-input" value="4">
-                                            <span class="quantity-btn">+<i data-feather="plus-circle" class="plus-circle"></i></span>
-                                        </div>
-                                    </td>
-                                    <td class="action-table-data justify-content-center">
-                                        <div class="edit-delete-action">
-                                            <a class="barcode-delete-icon confirm-text" href="javascript:void(0);">
-                                                <i data-feather="trash-2" class="feather-trash-2"></i>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
+                    
                             </tbody>
-                        </table> *@
+                        </table> 
                     </div>
                 </div>
             </div>
@@ -305,32 +242,24 @@
     <script>
         $(document).ready(function () {
             $('#productCodeInput').on('input', function () {
-                var searchTerm = $(this).val().trim();
+            var searchTerm = document.getElementById('productCodeInput').value.trim();
+
+                //$(this).val().trim();
 
                 if (searchTerm.length > 0) {
                     $.ajax({
-                        url: '/api/InventoryManagement/GetSearch',
+                    url: '@Url.Action("GetSearch", "InventoryManagement")',
                         method: 'POST',
                         data: { code: searchTerm },
                         success: function (html) {
 
                             $("#searchResults").html(html);
                            // $('#searchResults').empty(); // Clear previous results
-                        }
+                        },
                         error: function () {
-                                alert("Error loading tab content!");
+                                alert("Error loading content!");
                             }
-                //             if (products.length > 0) {
-                //                 $.each(products, function (index, product) {
-                //                     $('#searchResults').append('<div>' + product.name + '</div>');
-                //                 });
-                //             } else {
-                //                 $('#searchResults').text('No products found.');
-                //             }
-                //         },
-                //         error: function () {
-                //             $('#searchResults').text('Error fetching products.');
-                //         }
+                
                     });
                 } else {
                     $('#searchResults').empty(); // Clear results if input is empty
