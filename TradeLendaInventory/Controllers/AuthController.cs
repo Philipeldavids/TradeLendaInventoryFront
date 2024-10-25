@@ -84,7 +84,11 @@ namespace TradeLendaInventory.Controllers
         [HttpGet]
         public IActionResult Register()
         {
-            return View();
+            var model = new RegisterModel()
+            {
+                Role = Roles.Admin
+            };
+            return View(model);
         }
 
         [HttpPost]

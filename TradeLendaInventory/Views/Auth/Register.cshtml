@@ -64,13 +64,37 @@
                         <div class="form-login authentication-check">
                             <div class="row">
                                 <div class="col-sm-8">
+                                    
                                     <div class="custom-control custom-checkbox justify-content-start">
+                                        <div class="custom-control custom-checkbox">
+                                            <label class="checkboxs ps-4 mb-0 pb-0 line-height-1">
+                                                <input asp-for="Role" value="Admin"  type="radio" />
+                                                <span class="checkmarks"></span><span>Register as Admin</span>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <label class="checkboxs ps-4 mb-0 pb-0 line-height-1">
+                                                <input asp-for="Role" value="ShopOwner"  type="radio" />
+                                                <span class="checkmarks"></span><span>Register as ShopOwner</span>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <label class="checkboxs ps-4 mb-0 pb-0 line-height-1">
+                                                <input asp-for="Role"  value="Customer" type="radio"/>
+                                                <span class="checkmarks"></span><span>Register as Customer</span>
+                                            </label>
+                                        </div>
+
+                                        
+                                    </div>
+                                     <div class="custom-control custom-checkbox justify-content-start">
                                         <div class="custom-control custom-checkbox">
                                             <label class="checkboxs ps-4 mb-0 pb-0 line-height-1">
                                                 <input asp-for="IsAgreement" type="checkbox">
                                                 <span class="checkmarks"></span>I agree to the <a href="#" class="hover-a">Terms & Privacy</a>
                                             </label>
                                         </div>
+                                       
                                         <span asp-validation-for="IsAgreement"></span>
                                     </div>
                                 </div>

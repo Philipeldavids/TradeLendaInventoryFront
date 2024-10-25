@@ -19,9 +19,11 @@ namespace TradeLendaInventory.Models
         public string ConfirmPassword { get; set; }
         [Required]
         public bool IsAgreement { get; set; }
-        
-       
+        [Required]
 
+        public Roles Role { get; set; } 
+      
+    
     }
     
 
